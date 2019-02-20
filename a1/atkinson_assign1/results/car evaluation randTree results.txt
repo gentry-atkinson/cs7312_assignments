@@ -1,0 +1,432 @@
+=== Run information ===
+
+Scheme:       weka.classifiers.trees.RandomTree -K 0 -M 1.0 -V 0.001 -S 1
+Relation:     car
+Instances:    1728
+Attributes:   7
+              Buying
+               Maint
+               Doors
+               Persons
+               Lug Boot
+               Safety
+               Class
+Test mode:    10-fold cross-validation
+
+=== Classifier model (full training set) ===
+
+
+RandomTree
+==========
+
+Buying = vhigh
+|    Safety = low : unacc (144/0)
+|    Safety = med
+|   |    Doors < 3.5
+|   |   |    Lug Boot = small : unacc (24/0)
+|   |   |    Lug Boot = med
+|   |   |   |    Doors < 2.5 : unacc (12/0)
+|   |   |   |    Doors >= 2.5
+|   |   |   |   |    Maint = vhigh : unacc (3/0)
+|   |   |   |   |    Maint = high : unacc (3/0)
+|   |   |   |   |    Maint = med
+|   |   |   |   |   |    Persons < 4.5 : unacc (2/0)
+|   |   |   |   |   |    Persons >= 4.5 : acc (1/0)
+|   |   |   |   |    Maint = low
+|   |   |   |   |   |    Persons < 4.5 : unacc (2/0)
+|   |   |   |   |   |    Persons >= 4.5 : acc (1/0)
+|   |   |    Lug Boot = big
+|   |   |   |    Maint = vhigh : unacc (6/0)
+|   |   |   |    Maint = high : unacc (6/0)
+|   |   |   |    Maint = med
+|   |   |   |   |    Persons < 3 : unacc (2/0)
+|   |   |   |   |    Persons >= 3 : acc (4/0)
+|   |   |   |    Maint = low
+|   |   |   |   |    Persons < 3 : unacc (2/0)
+|   |   |   |   |    Persons >= 3 : acc (4/0)
+|   |    Doors >= 3.5
+|   |   |    Lug Boot = small : unacc (24/0)
+|   |   |    Lug Boot = med
+|   |   |   |    Persons < 3 : unacc (8/0)
+|   |   |   |    Persons >= 3
+|   |   |   |   |    Maint = vhigh : unacc (4/0)
+|   |   |   |   |    Maint = high : unacc (4/0)
+|   |   |   |   |    Maint = med : acc (4/0)
+|   |   |   |   |    Maint = low : acc (4/0)
+|   |   |    Lug Boot = big
+|   |   |   |    Maint = vhigh : unacc (6/0)
+|   |   |   |    Maint = high : unacc (6/0)
+|   |   |   |    Maint = med
+|   |   |   |   |    Persons < 3 : unacc (2/0)
+|   |   |   |   |    Persons >= 3 : acc (4/0)
+|   |   |   |    Maint = low
+|   |   |   |   |    Persons < 3 : unacc (2/0)
+|   |   |   |   |    Persons >= 3 : acc (4/0)
+|    Safety = high
+|   |    Maint = vhigh : unacc (36/0)
+|   |    Maint = high : unacc (36/0)
+|   |    Maint = med
+|   |   |    Persons < 3 : unacc (12/0)
+|   |   |    Persons >= 3
+|   |   |   |    Doors < 2.5
+|   |   |   |   |    Persons < 4.5 : acc (3/0)
+|   |   |   |   |    Persons >= 4.5
+|   |   |   |   |   |    Lug Boot = small : unacc (1/0)
+|   |   |   |   |   |    Lug Boot = med : acc (1/0)
+|   |   |   |   |   |    Lug Boot = big : acc (1/0)
+|   |   |   |    Doors >= 2.5 : acc (18/0)
+|   |    Maint = low
+|   |   |    Doors < 2.5
+|   |   |   |    Persons < 3 : unacc (3/0)
+|   |   |   |    Persons >= 3
+|   |   |   |   |    Persons < 4.5 : acc (3/0)
+|   |   |   |   |    Persons >= 4.5
+|   |   |   |   |   |    Lug Boot = small : unacc (1/0)
+|   |   |   |   |   |    Lug Boot = med : acc (1/0)
+|   |   |   |   |   |    Lug Boot = big : acc (1/0)
+|   |   |    Doors >= 2.5
+|   |   |   |    Persons < 3 : unacc (9/0)
+|   |   |   |    Persons >= 3 : acc (18/0)
+Buying = high
+|    Safety = low : unacc (144/0)
+|    Safety = med
+|   |    Persons < 3 : unacc (48/0)
+|   |    Persons >= 3
+|   |   |    Maint = vhigh : unacc (24/0)
+|   |   |    Maint = high
+|   |   |   |    Lug Boot = small : unacc (8/0)
+|   |   |   |    Lug Boot = med
+|   |   |   |   |    Doors < 3.5
+|   |   |   |   |   |    Doors < 2.5 : unacc (2/0)
+|   |   |   |   |   |    Doors >= 2.5
+|   |   |   |   |   |   |    Persons < 4.5 : unacc (1/0)
+|   |   |   |   |   |   |    Persons >= 4.5 : acc (1/0)
+|   |   |   |   |    Doors >= 3.5 : acc (4/0)
+|   |   |   |    Lug Boot = big : acc (8/0)
+|   |   |    Maint = med
+|   |   |   |    Persons < 4.5
+|   |   |   |   |    Lug Boot = small : unacc (4/0)
+|   |   |   |   |    Lug Boot = med
+|   |   |   |   |   |    Doors < 3.5 : unacc (2/0)
+|   |   |   |   |   |    Doors >= 3.5 : acc (2/0)
+|   |   |   |   |    Lug Boot = big : acc (4/0)
+|   |   |   |    Persons >= 4.5
+|   |   |   |   |    Lug Boot = small : unacc (4/0)
+|   |   |   |   |    Lug Boot = med
+|   |   |   |   |   |    Doors < 2.5 : unacc (1/0)
+|   |   |   |   |   |    Doors >= 2.5 : acc (3/0)
+|   |   |   |   |    Lug Boot = big : acc (4/0)
+|   |   |    Maint = low
+|   |   |   |    Doors < 3.5
+|   |   |   |   |    Persons < 4.5
+|   |   |   |   |   |    Lug Boot = small : unacc (2/0)
+|   |   |   |   |   |    Lug Boot = med : unacc (2/0)
+|   |   |   |   |   |    Lug Boot = big : acc (2/0)
+|   |   |   |   |    Persons >= 4.5
+|   |   |   |   |   |    Doors < 2.5
+|   |   |   |   |   |   |    Lug Boot = small : unacc (1/0)
+|   |   |   |   |   |   |    Lug Boot = med : unacc (1/0)
+|   |   |   |   |   |   |    Lug Boot = big : acc (1/0)
+|   |   |   |   |   |    Doors >= 2.5
+|   |   |   |   |   |   |    Lug Boot = small : unacc (1/0)
+|   |   |   |   |   |   |    Lug Boot = med : acc (1/0)
+|   |   |   |   |   |   |    Lug Boot = big : acc (1/0)
+|   |   |   |    Doors >= 3.5
+|   |   |   |   |    Lug Boot = small : unacc (4/0)
+|   |   |   |   |    Lug Boot = med : acc (4/0)
+|   |   |   |   |    Lug Boot = big : acc (4/0)
+|    Safety = high
+|   |    Maint = vhigh : unacc (36/0)
+|   |    Maint = high
+|   |   |    Doors < 2.5
+|   |   |   |    Lug Boot = small
+|   |   |   |   |    Persons < 3 : unacc (1/0)
+|   |   |   |   |    Persons >= 3
+|   |   |   |   |   |    Persons < 4.5 : acc (1/0)
+|   |   |   |   |   |    Persons >= 4.5 : unacc (1/0)
+|   |   |   |    Lug Boot = med
+|   |   |   |   |    Persons < 3 : unacc (1/0)
+|   |   |   |   |    Persons >= 3 : acc (2/0)
+|   |   |   |    Lug Boot = big
+|   |   |   |   |    Persons < 3 : unacc (1/0)
+|   |   |   |   |    Persons >= 3 : acc (2/0)
+|   |   |    Doors >= 2.5
+|   |   |   |    Persons < 3 : unacc (9/0)
+|   |   |   |    Persons >= 3 : acc (18/0)
+|   |    Maint = med
+|   |   |    Persons < 3 : unacc (12/0)
+|   |   |    Persons >= 3
+|   |   |   |    Persons < 4.5 : acc (12/0)
+|   |   |   |    Persons >= 4.5
+|   |   |   |   |    Doors < 2.5
+|   |   |   |   |   |    Lug Boot = small : unacc (1/0)
+|   |   |   |   |   |    Lug Boot = med : acc (1/0)
+|   |   |   |   |   |    Lug Boot = big : acc (1/0)
+|   |   |   |   |    Doors >= 2.5 : acc (9/0)
+|   |    Maint = low
+|   |   |    Lug Boot = small
+|   |   |   |    Persons < 3 : unacc (4/0)
+|   |   |   |    Persons >= 3
+|   |   |   |   |    Doors < 2.5
+|   |   |   |   |   |    Persons < 4.5 : acc (1/0)
+|   |   |   |   |   |    Persons >= 4.5 : unacc (1/0)
+|   |   |   |   |    Doors >= 2.5 : acc (6/0)
+|   |   |    Lug Boot = med
+|   |   |   |    Persons < 3 : unacc (4/0)
+|   |   |   |    Persons >= 3 : acc (8/0)
+|   |   |    Lug Boot = big
+|   |   |   |    Persons < 3 : unacc (4/0)
+|   |   |   |    Persons >= 3 : acc (8/0)
+Buying = med
+|    Persons < 3 : unacc (144/0)
+|    Persons >= 3
+|   |    Maint = vhigh
+|   |   |    Doors < 2.5
+|   |   |   |    Safety = low : unacc (6/0)
+|   |   |   |    Safety = med
+|   |   |   |   |    Lug Boot = small : unacc (2/0)
+|   |   |   |   |    Lug Boot = med : unacc (2/0)
+|   |   |   |   |    Lug Boot = big : acc (2/0)
+|   |   |   |    Safety = high
+|   |   |   |   |    Persons < 4.5 : acc (3/0)
+|   |   |   |   |    Persons >= 4.5
+|   |   |   |   |   |    Lug Boot = small : unacc (1/0)
+|   |   |   |   |   |    Lug Boot = med : acc (1/0)
+|   |   |   |   |   |    Lug Boot = big : acc (1/0)
+|   |   |    Doors >= 2.5
+|   |   |   |    Doors < 3.5
+|   |   |   |   |    Safety = low : unacc (6/0)
+|   |   |   |   |    Safety = med
+|   |   |   |   |   |    Lug Boot = small : unacc (2/0)
+|   |   |   |   |   |    Lug Boot = med
+|   |   |   |   |   |   |    Persons < 4.5 : unacc (1/0)
+|   |   |   |   |   |   |    Persons >= 4.5 : acc (1/0)
+|   |   |   |   |   |    Lug Boot = big : acc (2/0)
+|   |   |   |   |    Safety = high : acc (6/0)
+|   |   |   |    Doors >= 3.5
+|   |   |   |   |    Safety = low : unacc (12/0)
+|   |   |   |   |    Safety = med
+|   |   |   |   |   |    Lug Boot = small : unacc (4/0)
+|   |   |   |   |   |    Lug Boot = med : acc (4/0)
+|   |   |   |   |   |    Lug Boot = big : acc (4/0)
+|   |   |   |   |    Safety = high : acc (12/0)
+|   |    Maint = high
+|   |   |    Lug Boot = small
+|   |   |   |    Safety = low : unacc (8/0)
+|   |   |   |    Safety = med : unacc (8/0)
+|   |   |   |    Safety = high
+|   |   |   |   |    Doors < 2.5
+|   |   |   |   |   |    Persons < 4.5 : acc (1/0)
+|   |   |   |   |   |    Persons >= 4.5 : unacc (1/0)
+|   |   |   |   |    Doors >= 2.5 : acc (6/0)
+|   |   |    Lug Boot = med
+|   |   |   |    Doors < 3.5
+|   |   |   |   |    Safety = low : unacc (4/0)
+|   |   |   |   |    Safety = med
+|   |   |   |   |   |    Doors < 2.5 : unacc (2/0)
+|   |   |   |   |   |    Doors >= 2.5
+|   |   |   |   |   |   |    Persons < 4.5 : unacc (1/0)
+|   |   |   |   |   |   |    Persons >= 4.5 : acc (1/0)
+|   |   |   |   |    Safety = high : acc (4/0)
+|   |   |   |    Doors >= 3.5
+|   |   |   |   |    Safety = low : unacc (4/0)
+|   |   |   |   |    Safety = med : acc (4/0)
+|   |   |   |   |    Safety = high : acc (4/0)
+|   |   |    Lug Boot = big
+|   |   |   |    Safety = low : unacc (8/0)
+|   |   |   |    Safety = med : acc (8/0)
+|   |   |   |    Safety = high : acc (8/0)
+|   |    Maint = med
+|   |   |    Doors < 2.5
+|   |   |   |    Lug Boot = small
+|   |   |   |   |    Persons < 4.5
+|   |   |   |   |   |    Safety = low : unacc (1/0)
+|   |   |   |   |   |    Safety = med : acc (1/0)
+|   |   |   |   |   |    Safety = high : acc (1/0)
+|   |   |   |   |    Persons >= 4.5 : unacc (3/0)
+|   |   |   |    Lug Boot = med
+|   |   |   |   |    Safety = low : unacc (2/0)
+|   |   |   |   |    Safety = med : acc (2/0)
+|   |   |   |   |    Safety = high : acc (2/0)
+|   |   |   |    Lug Boot = big
+|   |   |   |   |    Safety = low : unacc (2/0)
+|   |   |   |   |    Safety = med : acc (2/0)
+|   |   |   |   |    Safety = high : vgood (2/0)
+|   |   |    Doors >= 2.5
+|   |   |   |    Safety = low : unacc (18/0)
+|   |   |   |    Safety = med : acc (18/0)
+|   |   |   |    Safety = high
+|   |   |   |   |    Lug Boot = small : acc (6/0)
+|   |   |   |   |    Lug Boot = med
+|   |   |   |   |   |    Doors < 3.5
+|   |   |   |   |   |   |    Persons < 4.5 : acc (1/0)
+|   |   |   |   |   |   |    Persons >= 4.5 : vgood (1/0)
+|   |   |   |   |   |    Doors >= 3.5 : vgood (4/0)
+|   |   |   |   |    Lug Boot = big : vgood (6/0)
+|   |    Maint = low
+|   |   |    Safety = low : unacc (24/0)
+|   |   |    Safety = med
+|   |   |   |    Lug Boot = small
+|   |   |   |   |    Doors < 2.5
+|   |   |   |   |   |    Persons < 4.5 : acc (1/0)
+|   |   |   |   |   |    Persons >= 4.5 : unacc (1/0)
+|   |   |   |   |    Doors >= 2.5 : acc (6/0)
+|   |   |   |    Lug Boot = med
+|   |   |   |   |    Persons < 4.5
+|   |   |   |   |   |    Doors < 3.5 : acc (2/0)
+|   |   |   |   |   |    Doors >= 3.5 : good (2/0)
+|   |   |   |   |    Persons >= 4.5
+|   |   |   |   |   |    Doors < 2.5 : acc (1/0)
+|   |   |   |   |   |    Doors >= 2.5 : good (3/0)
+|   |   |   |    Lug Boot = big : good (8/0)
+|   |   |    Safety = high
+|   |   |   |    Doors < 2.5
+|   |   |   |   |    Persons < 4.5
+|   |   |   |   |   |    Lug Boot = small : good (1/0)
+|   |   |   |   |   |    Lug Boot = med : good (1/0)
+|   |   |   |   |   |    Lug Boot = big : vgood (1/0)
+|   |   |   |   |    Persons >= 4.5
+|   |   |   |   |   |    Lug Boot = small : unacc (1/0)
+|   |   |   |   |   |    Lug Boot = med : good (1/0)
+|   |   |   |   |   |    Lug Boot = big : vgood (1/0)
+|   |   |   |    Doors >= 2.5
+|   |   |   |   |    Lug Boot = small : good (6/0)
+|   |   |   |   |    Lug Boot = med
+|   |   |   |   |   |    Doors < 3.5
+|   |   |   |   |   |   |    Persons < 4.5 : good (1/0)
+|   |   |   |   |   |   |    Persons >= 4.5 : vgood (1/0)
+|   |   |   |   |   |    Doors >= 3.5 : vgood (4/0)
+|   |   |   |   |    Lug Boot = big : vgood (6/0)
+Buying = low
+|    Persons < 3 : unacc (144/0)
+|    Persons >= 3
+|   |    Safety = low : unacc (96/0)
+|   |    Safety = med
+|   |   |    Lug Boot = small
+|   |   |   |    Maint = vhigh : unacc (8/0)
+|   |   |   |    Maint = high
+|   |   |   |   |    Persons < 4.5 : acc (4/0)
+|   |   |   |   |    Persons >= 4.5
+|   |   |   |   |   |    Doors < 2.5 : unacc (1/0)
+|   |   |   |   |   |    Doors >= 2.5 : acc (3/0)
+|   |   |   |    Maint = med
+|   |   |   |   |    Persons < 4.5 : acc (4/0)
+|   |   |   |   |    Persons >= 4.5
+|   |   |   |   |   |    Doors < 2.5 : unacc (1/0)
+|   |   |   |   |   |    Doors >= 2.5 : acc (3/0)
+|   |   |   |    Maint = low
+|   |   |   |   |    Persons < 4.5 : acc (4/0)
+|   |   |   |   |    Persons >= 4.5
+|   |   |   |   |   |    Doors < 2.5 : unacc (1/0)
+|   |   |   |   |   |    Doors >= 2.5 : acc (3/0)
+|   |   |    Lug Boot = med
+|   |   |   |    Maint = vhigh
+|   |   |   |   |    Persons < 4.5
+|   |   |   |   |   |    Doors < 3.5 : unacc (2/0)
+|   |   |   |   |   |    Doors >= 3.5 : acc (2/0)
+|   |   |   |   |    Persons >= 4.5
+|   |   |   |   |   |    Doors < 2.5 : unacc (1/0)
+|   |   |   |   |   |    Doors >= 2.5 : acc (3/0)
+|   |   |   |    Maint = high : acc (8/0)
+|   |   |   |    Maint = med
+|   |   |   |   |    Persons < 4.5
+|   |   |   |   |   |    Doors < 3.5 : acc (2/0)
+|   |   |   |   |   |    Doors >= 3.5 : good (2/0)
+|   |   |   |   |    Persons >= 4.5
+|   |   |   |   |   |    Doors < 2.5 : acc (1/0)
+|   |   |   |   |   |    Doors >= 2.5 : good (3/0)
+|   |   |   |    Maint = low
+|   |   |   |   |    Doors < 3.5
+|   |   |   |   |   |    Doors < 2.5 : acc (2/0)
+|   |   |   |   |   |    Doors >= 2.5
+|   |   |   |   |   |   |    Persons < 4.5 : acc (1/0)
+|   |   |   |   |   |   |    Persons >= 4.5 : good (1/0)
+|   |   |   |   |    Doors >= 3.5 : good (4/0)
+|   |   |    Lug Boot = big
+|   |   |   |    Maint = vhigh : acc (8/0)
+|   |   |   |    Maint = high : acc (8/0)
+|   |   |   |    Maint = med : good (8/0)
+|   |   |   |    Maint = low : good (8/0)
+|   |    Safety = high
+|   |   |    Lug Boot = small
+|   |   |   |    Maint = vhigh
+|   |   |   |   |    Persons < 4.5 : acc (4/0)
+|   |   |   |   |    Persons >= 4.5
+|   |   |   |   |   |    Doors < 2.5 : unacc (1/0)
+|   |   |   |   |   |    Doors >= 2.5 : acc (3/0)
+|   |   |   |    Maint = high
+|   |   |   |   |    Persons < 4.5 : acc (4/0)
+|   |   |   |   |    Persons >= 4.5
+|   |   |   |   |   |    Doors < 2.5 : unacc (1/0)
+|   |   |   |   |   |    Doors >= 2.5 : acc (3/0)
+|   |   |   |    Maint = med
+|   |   |   |   |    Doors < 2.5
+|   |   |   |   |   |    Persons < 4.5 : good (1/0)
+|   |   |   |   |   |    Persons >= 4.5 : unacc (1/0)
+|   |   |   |   |    Doors >= 2.5 : good (6/0)
+|   |   |   |    Maint = low
+|   |   |   |   |    Doors < 2.5
+|   |   |   |   |   |    Persons < 4.5 : good (1/0)
+|   |   |   |   |   |    Persons >= 4.5 : unacc (1/0)
+|   |   |   |   |    Doors >= 2.5 : good (6/0)
+|   |   |    Lug Boot = med
+|   |   |   |    Doors < 3.5
+|   |   |   |   |    Doors < 2.5
+|   |   |   |   |   |    Maint = vhigh : acc (2/0)
+|   |   |   |   |   |    Maint = high : acc (2/0)
+|   |   |   |   |   |    Maint = med : good (2/0)
+|   |   |   |   |   |    Maint = low : good (2/0)
+|   |   |   |   |    Doors >= 2.5
+|   |   |   |   |   |    Persons < 4.5
+|   |   |   |   |   |   |    Maint = vhigh : acc (1/0)
+|   |   |   |   |   |   |    Maint = high : acc (1/0)
+|   |   |   |   |   |   |    Maint = med : good (1/0)
+|   |   |   |   |   |   |    Maint = low : good (1/0)
+|   |   |   |   |   |    Persons >= 4.5
+|   |   |   |   |   |   |    Maint = vhigh : acc (1/0)
+|   |   |   |   |   |   |    Maint = high : vgood (1/0)
+|   |   |   |   |   |   |    Maint = med : vgood (1/0)
+|   |   |   |   |   |   |    Maint = low : vgood (1/0)
+|   |   |   |    Doors >= 3.5
+|   |   |   |   |    Maint = vhigh : acc (4/0)
+|   |   |   |   |    Maint = high : vgood (4/0)
+|   |   |   |   |    Maint = med : vgood (4/0)
+|   |   |   |   |    Maint = low : vgood (4/0)
+|   |   |    Lug Boot = big
+|   |   |   |    Maint = vhigh : acc (8/0)
+|   |   |   |    Maint = high : vgood (8/0)
+|   |   |   |    Maint = med : vgood (8/0)
+|   |   |   |    Maint = low : vgood (8/0)
+
+Size of the tree : 379
+
+Time taken to build model: 0.01 seconds
+
+=== Stratified cross-validation ===
+=== Summary ===
+
+Correctly Classified Instances        1613               93.3449 %
+Incorrectly Classified Instances       115                6.6551 %
+Kappa statistic                          0.8554
+Mean absolute error                      0.0339
+Root mean squared error                  0.1736
+Relative absolute error                 14.7823 %
+Root relative squared error             51.3466 %
+Total Number of Instances             1728     
+
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0.963    0.066    0.972      0.963    0.967      0.892    0.964     0.974     unacc
+                 0.888    0.040    0.863      0.888    0.875      0.839    0.943     0.827     acc
+                 0.892    0.008    0.806      0.892    0.847      0.842    0.950     0.745     vgood
+                 0.710    0.008    0.790      0.710    0.748      0.739    0.879     0.623     good
+Weighted Avg.    0.933    0.056    0.934      0.933    0.934      0.872    0.955     0.919     
+
+=== Confusion Matrix ===
+
+    a    b    c    d   <-- classified as
+ 1165   42    0    3 |    a = unacc
+   32  341    5    6 |    b = acc
+    0    3   58    4 |    c = vgood
+    2    9    9   49 |    d = good

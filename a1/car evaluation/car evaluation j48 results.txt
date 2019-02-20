@@ -1,0 +1,175 @@
+=== Run information ===
+
+Scheme:       weka.classifiers.trees.J48 -C 0.25 -M 2 -output-debug-info
+Relation:     car
+Instances:    1728
+Attributes:   7
+              Buying
+               Maint
+               Doors
+               Persons
+               Lug Boot
+               Safety
+               Class
+Test mode:    10-fold cross-validation
+
+=== Classifier model (full training set) ===
+
+J48 pruned tree
+------------------
+
+ Persons <= 2: unacc (576.0)
+ Persons > 2
+|    Safety = low: unacc (384.0)
+|    Safety = med
+|   |   Buying = vhigh
+|   |   |    Maint = vhigh: unacc (24.0)
+|   |   |    Maint = high: unacc (24.0)
+|   |   |    Maint = med
+|   |   |   |    Lug Boot = small: unacc (8.0)
+|   |   |   |    Lug Boot = med
+|   |   |   |   |    Doors <= 3: unacc (4.0/1.0)
+|   |   |   |   |    Doors > 3: acc (4.0)
+|   |   |   |    Lug Boot = big: acc (8.0)
+|   |   |    Maint = low
+|   |   |   |    Lug Boot = small: unacc (8.0)
+|   |   |   |    Lug Boot = med
+|   |   |   |   |    Doors <= 3: unacc (4.0/1.0)
+|   |   |   |   |    Doors > 3: acc (4.0)
+|   |   |   |    Lug Boot = big: acc (8.0)
+|   |   Buying = high
+|   |   |    Lug Boot = small: unacc (32.0)
+|   |   |    Lug Boot = med
+|   |   |   |    Doors <= 2: unacc (8.0)
+|   |   |   |    Doors > 2
+|   |   |   |   |    Maint = vhigh: unacc (6.0)
+|   |   |   |   |    Maint = high: acc (6.0/1.0)
+|   |   |   |   |    Maint = med: acc (6.0/1.0)
+|   |   |   |   |    Maint = low: acc (6.0/1.0)
+|   |   |    Lug Boot = big
+|   |   |   |    Maint = vhigh: unacc (8.0)
+|   |   |   |    Maint = high: acc (8.0)
+|   |   |   |    Maint = med: acc (8.0)
+|   |   |   |    Maint = low: acc (8.0)
+|   |   Buying = med
+|   |   |    Maint = vhigh
+|   |   |   |    Lug Boot = small: unacc (8.0)
+|   |   |   |    Lug Boot = med
+|   |   |   |   |    Doors <= 3: unacc (4.0/1.0)
+|   |   |   |   |    Doors > 3: acc (4.0)
+|   |   |   |    Lug Boot = big: acc (8.0)
+|   |   |    Maint = high
+|   |   |   |    Lug Boot = small: unacc (8.0)
+|   |   |   |    Lug Boot = med
+|   |   |   |   |    Doors <= 3: unacc (4.0/1.0)
+|   |   |   |   |    Doors > 3: acc (4.0)
+|   |   |   |    Lug Boot = big: acc (8.0)
+|   |   |    Maint = med: acc (24.0/1.0)
+|   |   |    Maint = low
+|   |   |   |    Lug Boot = small: acc (8.0/1.0)
+|   |   |   |    Lug Boot = med
+|   |   |   |   |    Doors <= 3: acc (4.0/1.0)
+|   |   |   |   |    Doors > 3: good (4.0)
+|   |   |   |    Lug Boot = big: good (8.0)
+|   |   Buying = low
+|   |   |    Maint = vhigh
+|   |   |   |    Lug Boot = small: unacc (8.0)
+|   |   |   |    Lug Boot = med
+|   |   |   |   |    Doors <= 3: unacc (4.0/1.0)
+|   |   |   |   |    Doors > 3: acc (4.0)
+|   |   |   |    Lug Boot = big: acc (8.0)
+|   |   |    Maint = high: acc (24.0/1.0)
+|   |   |    Maint = med
+|   |   |   |    Lug Boot = small: acc (8.0/1.0)
+|   |   |   |    Lug Boot = med
+|   |   |   |   |    Doors <= 3: acc (4.0/1.0)
+|   |   |   |   |    Doors > 3: good (4.0)
+|   |   |   |    Lug Boot = big: good (8.0)
+|   |   |    Maint = low
+|   |   |   |    Lug Boot = small: acc (8.0/1.0)
+|   |   |   |    Lug Boot = med
+|   |   |   |   |    Doors <= 3: acc (4.0/1.0)
+|   |   |   |   |    Doors > 3: good (4.0)
+|   |   |   |    Lug Boot = big: good (8.0)
+|    Safety = high
+|   |   Buying = vhigh
+|   |   |    Maint = vhigh: unacc (24.0)
+|   |   |    Maint = high: unacc (24.0)
+|   |   |    Maint = med: acc (24.0/1.0)
+|   |   |    Maint = low: acc (24.0/1.0)
+|   |   Buying = high
+|   |   |    Maint = vhigh: unacc (24.0)
+|   |   |    Maint = high: acc (24.0/1.0)
+|   |   |    Maint = med: acc (24.0/1.0)
+|   |   |    Maint = low: acc (24.0/1.0)
+|   |   Buying = med
+|   |   |    Maint = vhigh: acc (24.0/1.0)
+|   |   |    Maint = high: acc (24.0/1.0)
+|   |   |    Maint = med
+|   |   |   |    Lug Boot = small: acc (8.0/1.0)
+|   |   |   |    Lug Boot = med
+|   |   |   |   |    Doors <= 3: acc (4.0/1.0)
+|   |   |   |   |    Doors > 3: vgood (4.0)
+|   |   |   |    Lug Boot = big: vgood (8.0)
+|   |   |    Maint = low
+|   |   |   |    Lug Boot = small: good (8.0/1.0)
+|   |   |   |    Lug Boot = med
+|   |   |   |   |    Doors <= 3: good (4.0/1.0)
+|   |   |   |   |    Doors > 3: vgood (4.0)
+|   |   |   |    Lug Boot = big: vgood (8.0)
+|   |   Buying = low
+|   |   |    Maint = vhigh: acc (24.0/1.0)
+|   |   |    Maint = high
+|   |   |   |    Lug Boot = small: acc (8.0/1.0)
+|   |   |   |    Lug Boot = med
+|   |   |   |   |    Doors <= 3: acc (4.0/1.0)
+|   |   |   |   |    Doors > 3: vgood (4.0)
+|   |   |   |    Lug Boot = big: vgood (8.0)
+|   |   |    Maint = med
+|   |   |   |    Lug Boot = small: good (8.0/1.0)
+|   |   |   |    Lug Boot = med
+|   |   |   |   |    Doors <= 3: good (4.0/1.0)
+|   |   |   |   |    Doors > 3: vgood (4.0)
+|   |   |   |    Lug Boot = big: vgood (8.0)
+|   |   |    Maint = low
+|   |   |   |    Lug Boot = small: good (8.0/1.0)
+|   |   |   |    Lug Boot = med
+|   |   |   |   |    Doors <= 3: good (4.0/1.0)
+|   |   |   |   |    Doors > 3: vgood (4.0)
+|   |   |   |    Lug Boot = big: vgood (8.0)
+
+Number of Leaves  : 	79
+
+Size of the tree : 	120
+
+
+Time taken to build model: 0.01 seconds
+
+=== Stratified cross-validation ===
+=== Summary ===
+
+Correctly Classified Instances        1665               96.3542 %
+Incorrectly Classified Instances        63                3.6458 %
+Kappa statistic                          0.9215
+Mean absolute error                      0.0254
+Root mean squared error                  0.1319
+Relative absolute error                 11.0993 %
+Root relative squared error             39.0029 %
+Total Number of Instances             1728     
+
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0.974    0.014    0.994      0.974    0.984      0.949    0.980     0.990     unacc
+                 0.958    0.028    0.909      0.958    0.933      0.914    0.975     0.864     acc
+                 0.938    0.005    0.884      0.938    0.910      0.907    0.968     0.905     vgood
+                 0.826    0.007    0.838      0.826    0.832      0.825    0.945     0.750     good
+Weighted Avg.    0.964    0.016    0.965      0.964    0.964      0.934    0.977     0.949     
+
+=== Confusion Matrix ===
+
+    a    b    c    d   <-- classified as
+ 1179   28    0    3 |    a = unacc
+    7  368    4    5 |    b = acc
+    0    1   61    3 |    c = vgood
+    0    8    4   57 |    d = good

@@ -1,0 +1,154 @@
+=== Run information ===
+
+Scheme:       weka.classifiers.trees.J48 -C 0.25 -M 2 -output-debug-info
+Relation:     balance-scale
+Instances:    625
+Attributes:   5
+              Class
+               Left Weight
+               Left Distance
+               Right Weight
+               Right Distance
+Test mode:    10-fold cross-validation
+
+=== Classifier model (full training set) ===
+
+J48 pruned tree
+------------------
+
+ Left Weight <= 2
+|    Right Weight <= 2
+|   |    Left Distance <= 2
+|   |   |    Right Distance <= 2
+|   |   |   |    Left Weight <= 1
+|   |   |   |   |    Left Distance <= 1: R (4.0/1.0)
+|   |   |   |   |    Left Distance > 1: B (4.0/2.0)
+|   |   |   |    Left Weight > 1
+|   |   |   |   |    Left Distance <= 1: B (4.0/2.0)
+|   |   |   |   |    Left Distance > 1: L (4.0/1.0)
+|   |   |    Right Distance > 2: R (24.0/2.0)
+|   |    Left Distance > 2
+|   |   |    Right Distance <= 2: L (24.0/2.0)
+|   |   |    Right Distance > 2
+|   |   |   |    Left Weight <= 1
+|   |   |   |   |    Right Weight <= 1
+|   |   |   |   |   |    Left Distance <= 3: R (3.0/1.0)
+|   |   |   |   |   |    Left Distance > 3
+|   |   |   |   |   |   |    Right Distance <= 4: L (4.0/1.0)
+|   |   |   |   |   |   |    Right Distance > 4: B (2.0/1.0)
+|   |   |   |   |    Right Weight > 1: R (9.0)
+|   |   |   |    Left Weight > 1
+|   |   |   |   |    Right Weight <= 1: L (9.0)
+|   |   |   |   |    Right Weight > 1
+|   |   |   |   |   |    Left Distance <= 3: R (3.0/1.0)
+|   |   |   |   |   |    Left Distance > 3
+|   |   |   |   |   |   |    Right Distance <= 4: L (4.0/1.0)
+|   |   |   |   |   |   |    Right Distance > 4: B (2.0/1.0)
+|    Right Weight > 2
+|   |    Right Distance <= 2
+|   |   |    Left Distance <= 2: R (24.0/2.0)
+|   |   |    Left Distance > 2
+|   |   |   |    Left Weight <= 1
+|   |   |   |   |    Right Distance <= 1
+|   |   |   |   |   |    Left Distance <= 3: R (3.0/1.0)
+|   |   |   |   |   |    Left Distance > 3
+|   |   |   |   |   |   |    Right Weight <= 4: L (4.0/1.0)
+|   |   |   |   |   |   |    Right Weight > 4: B (2.0/1.0)
+|   |   |   |   |    Right Distance > 1: R (9.0)
+|   |   |   |    Left Weight > 1
+|   |   |   |   |    Right Distance <= 1: L (9.0)
+|   |   |   |   |    Right Distance > 1
+|   |   |   |   |   |    Left Distance <= 3: R (3.0/1.0)
+|   |   |   |   |   |    Left Distance > 3
+|   |   |   |   |   |   |    Right Weight <= 4: L (4.0/1.0)
+|   |   |   |   |   |   |    Right Weight > 4: B (2.0/1.0)
+|   |    Right Distance > 2: R (90.0/1.0)
+ Left Weight > 2
+|    Left Distance <= 2
+|   |    Right Weight <= 2
+|   |   |    Right Distance <= 2: L (24.0/2.0)
+|   |   |    Right Distance > 2
+|   |   |   |    Left Distance <= 1
+|   |   |   |   |    Right Weight <= 1
+|   |   |   |   |   |    Left Weight <= 3: R (3.0/1.0)
+|   |   |   |   |   |    Left Weight > 3
+|   |   |   |   |   |   |    Right Distance <= 4: L (4.0/1.0)
+|   |   |   |   |   |   |    Right Distance > 4: B (2.0/1.0)
+|   |   |   |   |    Right Weight > 1: R (9.0)
+|   |   |   |    Left Distance > 1
+|   |   |   |   |    Right Weight <= 1: L (9.0)
+|   |   |   |   |    Right Weight > 1
+|   |   |   |   |   |    Left Weight <= 3: R (3.0/1.0)
+|   |   |   |   |   |    Left Weight > 3
+|   |   |   |   |   |   |    Right Distance <= 4: L (4.0/1.0)
+|   |   |   |   |   |   |    Right Distance > 4: B (2.0/1.0)
+|   |    Right Weight > 2
+|   |   |    Right Distance <= 2
+|   |   |   |    Left Distance <= 1
+|   |   |   |   |    Right Distance <= 1
+|   |   |   |   |   |    Left Weight <= 3: R (3.0/1.0)
+|   |   |   |   |   |    Left Weight > 3
+|   |   |   |   |   |   |    Right Weight <= 4: L (4.0/1.0)
+|   |   |   |   |   |   |    Right Weight > 4: B (2.0/1.0)
+|   |   |   |   |    Right Distance > 1: R (9.0)
+|   |   |   |    Left Distance > 1
+|   |   |   |   |    Right Distance <= 1: L (9.0)
+|   |   |   |   |    Right Distance > 1
+|   |   |   |   |   |    Left Weight <= 3: R (3.0/1.0)
+|   |   |   |   |   |    Left Weight > 3
+|   |   |   |   |   |   |    Right Weight <= 4: L (4.0/1.0)
+|   |   |   |   |   |   |    Right Weight > 4: B (2.0/1.0)
+|   |   |    Right Distance > 2: R (54.0/1.0)
+|    Left Distance > 2
+|   |    Right Weight <= 2: L (90.0/1.0)
+|   |    Right Weight > 2
+|   |   |    Right Distance <= 2: L (54.0/1.0)
+|   |   |    Right Distance > 2
+|   |   |   |    Left Weight <= 3
+|   |   |   |   |    Right Weight <= 3
+|   |   |   |   |   |    Left Distance <= 3: R (3.0/1.0)
+|   |   |   |   |   |    Left Distance > 3
+|   |   |   |   |   |   |    Right Distance <= 4: L (4.0/1.0)
+|   |   |   |   |   |   |    Right Distance > 4: B (2.0/1.0)
+|   |   |   |   |    Right Weight > 3: R (18.0/3.0)
+|   |   |   |    Left Weight > 3
+|   |   |   |   |    Right Weight <= 3: L (18.0/3.0)
+|   |   |   |   |    Right Weight > 3
+|   |   |   |   |   |    Right Distance <= 3: L (12.0/3.0)
+|   |   |   |   |   |    Right Distance > 3
+|   |   |   |   |   |   |    Left Distance <= 4: R (16.0/4.0)
+|   |   |   |   |   |   |    Left Distance > 4: L (8.0/4.0)
+
+Number of Leaves  : 	52
+
+Size of the tree : 	103
+
+
+Time taken to build model: 0 seconds
+
+=== Stratified cross-validation ===
+=== Summary ===
+
+Correctly Classified Instances         479               76.64   %
+Incorrectly Classified Instances       146               23.36   %
+Kappa statistic                          0.5773
+Mean absolute error                      0.1892
+Root mean squared error                  0.3699
+Relative absolute error                 49.8213 %
+Root relative squared error             84.9284 %
+Total Number of Instances              625     
+
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0.000    0.038    0.000      0.000    0.000      -0.056   0.454     0.075     B
+                 0.847    0.178    0.803      0.847    0.824      0.667    0.860     0.838     R
+                 0.816    0.190    0.786      0.816    0.801      0.625    0.823     0.773     L
+Weighted Avg.    0.766    0.173    0.732      0.766    0.749      0.591    0.811     0.748     
+
+=== Confusion Matrix ===
+
+   a   b   c   <-- classified as
+   0  17  32 |   a = B
+  12 244  32 |   b = R
+  10  43 235 |   c = L

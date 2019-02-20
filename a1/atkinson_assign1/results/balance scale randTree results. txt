@@ -1,0 +1,384 @@
+=== Run information ===
+
+Scheme:       weka.classifiers.trees.RandomTree -K 0 -M 1.0 -V 0.001 -S 1
+Relation:     balance-scale
+Instances:    625
+Attributes:   5
+              Class
+               Left Weight
+               Left Distance
+               Right Weight
+               Right Distance
+Test mode:    10-fold cross-validation
+
+=== Classifier model (full training set) ===
+
+
+RandomTree
+==========
+
+ Left Distance < 2.5
+|    Right Weight < 2.5
+|   |    Left Weight < 2.5
+|   |   |    Right Distance < 2.5
+|   |   |   |    Left Weight < 1.5
+|   |   |   |   |    Right Weight < 1.5
+|   |   |   |   |   |    Left Distance < 1.5
+|   |   |   |   |   |   |    Right Distance < 1.5 : B (1/0)
+|   |   |   |   |   |   |    Right Distance >= 1.5 : R (1/0)
+|   |   |   |   |   |    Left Distance >= 1.5
+|   |   |   |   |   |   |    Right Distance < 1.5 : L (1/0)
+|   |   |   |   |   |   |    Right Distance >= 1.5 : B (1/0)
+|   |   |   |   |    Right Weight >= 1.5
+|   |   |   |   |   |    Left Distance < 1.5 : R (2/0)
+|   |   |   |   |   |    Left Distance >= 1.5
+|   |   |   |   |   |   |    Right Distance < 1.5 : B (1/0)
+|   |   |   |   |   |   |    Right Distance >= 1.5 : R (1/0)
+|   |   |   |    Left Weight >= 1.5
+|   |   |   |   |    Left Distance < 1.5
+|   |   |   |   |   |    Right Weight < 1.5
+|   |   |   |   |   |   |    Right Distance < 1.5 : L (1/0)
+|   |   |   |   |   |   |    Right Distance >= 1.5 : B (1/0)
+|   |   |   |   |   |    Right Weight >= 1.5
+|   |   |   |   |   |   |    Right Distance < 1.5 : B (1/0)
+|   |   |   |   |   |   |    Right Distance >= 1.5 : R (1/0)
+|   |   |   |   |    Left Distance >= 1.5
+|   |   |   |   |   |    Right Weight < 1.5 : L (2/0)
+|   |   |   |   |   |    Right Weight >= 1.5
+|   |   |   |   |   |   |    Right Distance < 1.5 : L (1/0)
+|   |   |   |   |   |   |    Right Distance >= 1.5 : B (1/0)
+|   |   |    Right Distance >= 2.5
+|   |   |   |    Left Weight < 1.5 : R (12/0)
+|   |   |   |    Left Weight >= 1.5
+|   |   |   |   |    Right Weight < 1.5
+|   |   |   |   |   |    Left Distance < 1.5 : R (3/0)
+|   |   |   |   |   |    Left Distance >= 1.5
+|   |   |   |   |   |   |    Right Distance < 3.5 : L (1/0)
+|   |   |   |   |   |   |    Right Distance >= 3.5
+|   |   |   |   |   |   |   |    Right Distance < 4.5 : B (1/0)
+|   |   |   |   |   |   |   |    Right Distance >= 4.5 : R (1/0)
+|   |   |   |   |    Right Weight >= 1.5 : R (6/0)
+|   |    Left Weight >= 2.5
+|   |   |    Left Distance < 1.5
+|   |   |   |    Right Weight < 1.5
+|   |   |   |   |    Left Weight < 4.5
+|   |   |   |   |   |    Right Distance < 3.5
+|   |   |   |   |   |   |    Right Distance < 2.5 : L (4/0)
+|   |   |   |   |   |   |    Right Distance >= 2.5
+|   |   |   |   |   |   |   |    Left Weight < 3.5 : B (1/0)
+|   |   |   |   |   |   |   |    Left Weight >= 3.5 : L (1/0)
+|   |   |   |   |   |    Right Distance >= 3.5
+|   |   |   |   |   |   |    Left Weight < 3.5 : R (2/0)
+|   |   |   |   |   |   |    Left Weight >= 3.5
+|   |   |   |   |   |   |   |    Right Distance < 4.5 : B (1/0)
+|   |   |   |   |   |   |   |    Right Distance >= 4.5 : R (1/0)
+|   |   |   |   |    Left Weight >= 4.5
+|   |   |   |   |   |    Right Distance < 4.5 : L (4/0)
+|   |   |   |   |   |    Right Distance >= 4.5 : B (1/0)
+|   |   |   |    Right Weight >= 1.5
+|   |   |   |   |    Left Weight < 4.5
+|   |   |   |   |   |    Right Distance < 1.5 : L (2/0)
+|   |   |   |   |   |    Right Distance >= 1.5
+|   |   |   |   |   |   |    Right Distance < 2.5
+|   |   |   |   |   |   |   |    Left Weight < 3.5 : R (1/0)
+|   |   |   |   |   |   |   |    Left Weight >= 3.5 : B (1/0)
+|   |   |   |   |   |   |    Right Distance >= 2.5 : R (6/0)
+|   |   |   |   |    Left Weight >= 4.5
+|   |   |   |   |   |    Right Distance < 2.5 : L (2/0)
+|   |   |   |   |   |    Right Distance >= 2.5 : R (3/0)
+|   |   |    Left Distance >= 1.5
+|   |   |   |    Right Weight < 1.5 : L (15/0)
+|   |   |   |    Right Weight >= 1.5
+|   |   |   |   |    Right Distance < 3.5
+|   |   |   |   |   |    Left Weight < 3.5
+|   |   |   |   |   |   |    Right Distance < 2.5 : L (2/0)
+|   |   |   |   |   |   |    Right Distance >= 2.5 : B (1/0)
+|   |   |   |   |   |    Left Weight >= 3.5 : L (6/0)
+|   |   |   |   |    Right Distance >= 3.5
+|   |   |   |   |   |    Left Weight < 4.5
+|   |   |   |   |   |   |    Left Weight < 3.5 : R (2/0)
+|   |   |   |   |   |   |    Left Weight >= 3.5
+|   |   |   |   |   |   |   |    Right Distance < 4.5 : B (1/0)
+|   |   |   |   |   |   |   |    Right Distance >= 4.5 : R (1/0)
+|   |   |   |   |   |    Left Weight >= 4.5
+|   |   |   |   |   |   |    Right Distance < 4.5 : L (1/0)
+|   |   |   |   |   |   |    Right Distance >= 4.5 : B (1/0)
+|    Right Weight >= 2.5
+|   |    Right Distance < 2.5
+|   |   |    Left Distance < 1.5
+|   |   |   |    Right Distance < 1.5
+|   |   |   |   |    Left Weight < 3.5
+|   |   |   |   |   |    Right Weight < 3.5
+|   |   |   |   |   |   |    Left Weight < 2.5 : R (2/0)
+|   |   |   |   |   |   |    Left Weight >= 2.5 : B (1/0)
+|   |   |   |   |   |    Right Weight >= 3.5 : R (6/0)
+|   |   |   |   |    Left Weight >= 3.5
+|   |   |   |   |   |    Right Weight < 4.5
+|   |   |   |   |   |   |    Left Weight < 4.5
+|   |   |   |   |   |   |   |    Right Weight < 3.5 : L (1/0)
+|   |   |   |   |   |   |   |    Right Weight >= 3.5 : B (1/0)
+|   |   |   |   |   |   |    Left Weight >= 4.5 : L (2/0)
+|   |   |   |   |   |    Right Weight >= 4.5
+|   |   |   |   |   |   |    Left Weight < 4.5 : R (1/0)
+|   |   |   |   |   |   |    Left Weight >= 4.5 : B (1/0)
+|   |   |   |    Right Distance >= 1.5 : R (15/0)
+|   |   |    Left Distance >= 1.5
+|   |   |   |    Left Weight < 2.5
+|   |   |   |   |    Left Weight < 1.5 : R (6/0)
+|   |   |   |   |    Left Weight >= 1.5
+|   |   |   |   |   |    Right Weight < 3.5
+|   |   |   |   |   |   |    Right Distance < 1.5 : L (1/0)
+|   |   |   |   |   |   |    Right Distance >= 1.5 : R (1/0)
+|   |   |   |   |   |    Right Weight >= 3.5
+|   |   |   |   |   |   |    Right Distance < 1.5
+|   |   |   |   |   |   |   |    Right Weight < 4.5 : B (1/0)
+|   |   |   |   |   |   |   |    Right Weight >= 4.5 : R (1/0)
+|   |   |   |   |   |   |    Right Distance >= 1.5 : R (2/0)
+|   |   |   |    Left Weight >= 2.5
+|   |   |   |   |    Right Distance < 1.5 : L (9/0)
+|   |   |   |   |    Right Distance >= 1.5
+|   |   |   |   |   |    Right Weight < 3.5
+|   |   |   |   |   |   |    Left Weight < 3.5 : B (1/0)
+|   |   |   |   |   |   |    Left Weight >= 3.5 : L (2/0)
+|   |   |   |   |   |    Right Weight >= 3.5
+|   |   |   |   |   |   |    Left Weight < 4.5
+|   |   |   |   |   |   |   |    Left Weight < 3.5 : R (2/0)
+|   |   |   |   |   |   |   |    Left Weight >= 3.5
+|   |   |   |   |   |   |   |   |    Right Weight < 4.5 : B (1/0)
+|   |   |   |   |   |   |   |   |    Right Weight >= 4.5 : R (1/0)
+|   |   |   |   |   |   |    Left Weight >= 4.5
+|   |   |   |   |   |   |   |    Right Weight < 4.5 : L (1/0)
+|   |   |   |   |   |   |   |    Right Weight >= 4.5 : B (1/0)
+|   |    Right Distance >= 2.5
+|   |   |    Left Weight < 4.5 : R (72/0)
+|   |   |    Left Weight >= 4.5
+|   |   |   |    Right Weight < 3.5
+|   |   |   |   |    Right Distance < 3.5
+|   |   |   |   |   |    Left Distance < 1.5 : R (1/0)
+|   |   |   |   |   |    Left Distance >= 1.5 : L (1/0)
+|   |   |   |   |    Right Distance >= 3.5 : R (4/0)
+|   |   |   |    Right Weight >= 3.5 : R (12/0)
+ Left Distance >= 2.5
+|    Left Weight < 2.5
+|   |    Right Weight < 2.5
+|   |   |    Right Distance < 2.5
+|   |   |   |    Left Weight < 1.5
+|   |   |   |   |    Right Weight < 1.5 : L (6/0)
+|   |   |   |   |    Right Weight >= 1.5
+|   |   |   |   |   |    Right Distance < 1.5 : L (3/0)
+|   |   |   |   |   |    Right Distance >= 1.5
+|   |   |   |   |   |   |    Left Distance < 3.5 : R (1/0)
+|   |   |   |   |   |   |    Left Distance >= 3.5
+|   |   |   |   |   |   |   |    Left Distance < 4.5 : B (1/0)
+|   |   |   |   |   |   |   |    Left Distance >= 4.5 : L (1/0)
+|   |   |   |    Left Weight >= 1.5 : L (12/0)
+|   |   |    Right Distance >= 2.5
+|   |   |   |    Left Weight < 1.5
+|   |   |   |   |    Left Distance < 3.5
+|   |   |   |   |   |    Right Weight < 1.5
+|   |   |   |   |   |   |    Right Distance < 3.5 : B (1/0)
+|   |   |   |   |   |   |    Right Distance >= 3.5 : R (2/0)
+|   |   |   |   |   |    Right Weight >= 1.5 : R (3/0)
+|   |   |   |   |    Left Distance >= 3.5
+|   |   |   |   |   |    Right Weight < 1.5
+|   |   |   |   |   |   |    Left Distance < 4.5
+|   |   |   |   |   |   |   |    Right Distance < 3.5 : L (1/0)
+|   |   |   |   |   |   |   |    Right Distance >= 3.5
+|   |   |   |   |   |   |   |   |    Right Distance < 4.5 : B (1/0)
+|   |   |   |   |   |   |   |   |    Right Distance >= 4.5 : R (1/0)
+|   |   |   |   |   |   |    Left Distance >= 4.5
+|   |   |   |   |   |   |   |    Right Distance < 4.5 : L (2/0)
+|   |   |   |   |   |   |   |    Right Distance >= 4.5 : B (1/0)
+|   |   |   |   |   |    Right Weight >= 1.5 : R (6/0)
+|   |   |   |    Left Weight >= 1.5
+|   |   |   |   |    Left Distance < 4.5
+|   |   |   |   |   |    Right Weight < 1.5 : L (6/0)
+|   |   |   |   |   |    Right Weight >= 1.5
+|   |   |   |   |   |   |    Right Distance < 3.5
+|   |   |   |   |   |   |   |    Left Distance < 3.5 : B (1/0)
+|   |   |   |   |   |   |   |    Left Distance >= 3.5 : L (1/0)
+|   |   |   |   |   |   |    Right Distance >= 3.5
+|   |   |   |   |   |   |   |    Left Distance < 3.5 : R (2/0)
+|   |   |   |   |   |   |   |    Left Distance >= 3.5
+|   |   |   |   |   |   |   |   |    Right Distance < 4.5 : B (1/0)
+|   |   |   |   |   |   |   |   |    Right Distance >= 4.5 : R (1/0)
+|   |   |   |   |    Left Distance >= 4.5
+|   |   |   |   |   |    Right Distance < 4.5 : L (4/0)
+|   |   |   |   |   |    Right Distance >= 4.5
+|   |   |   |   |   |   |    Right Weight < 1.5 : L (1/0)
+|   |   |   |   |   |   |    Right Weight >= 1.5 : B (1/0)
+|   |    Right Weight >= 2.5
+|   |   |    Right Distance < 2.5
+|   |   |   |    Left Weight < 1.5
+|   |   |   |   |    Right Distance < 1.5
+|   |   |   |   |   |    Right Weight < 3.5
+|   |   |   |   |   |   |    Left Distance < 3.5 : B (1/0)
+|   |   |   |   |   |   |    Left Distance >= 3.5 : L (2/0)
+|   |   |   |   |   |    Right Weight >= 3.5
+|   |   |   |   |   |   |    Left Distance < 4.5
+|   |   |   |   |   |   |   |    Right Weight < 4.5
+|   |   |   |   |   |   |   |   |    Left Distance < 3.5 : R (1/0)
+|   |   |   |   |   |   |   |   |    Left Distance >= 3.5 : B (1/0)
+|   |   |   |   |   |   |   |    Right Weight >= 4.5 : R (2/0)
+|   |   |   |   |   |   |    Left Distance >= 4.5
+|   |   |   |   |   |   |   |    Right Weight < 4.5 : L (1/0)
+|   |   |   |   |   |   |   |    Right Weight >= 4.5 : B (1/0)
+|   |   |   |   |    Right Distance >= 1.5 : R (9/0)
+|   |   |   |    Left Weight >= 1.5
+|   |   |   |   |    Right Distance < 1.5 : L (9/0)
+|   |   |   |   |    Right Distance >= 1.5
+|   |   |   |   |   |    Left Distance < 3.5
+|   |   |   |   |   |   |    Right Weight < 3.5 : B (1/0)
+|   |   |   |   |   |   |    Right Weight >= 3.5 : R (2/0)
+|   |   |   |   |   |    Left Distance >= 3.5
+|   |   |   |   |   |   |    Right Weight < 4.5
+|   |   |   |   |   |   |   |    Left Distance < 4.5
+|   |   |   |   |   |   |   |   |    Right Weight < 3.5 : L (1/0)
+|   |   |   |   |   |   |   |   |    Right Weight >= 3.5 : B (1/0)
+|   |   |   |   |   |   |   |    Left Distance >= 4.5 : L (2/0)
+|   |   |   |   |   |   |    Right Weight >= 4.5
+|   |   |   |   |   |   |   |    Left Distance < 4.5 : R (1/0)
+|   |   |   |   |   |   |   |    Left Distance >= 4.5 : B (1/0)
+|   |   |    Right Distance >= 2.5
+|   |   |   |    Right Weight < 3.5
+|   |   |   |   |    Left Distance < 4.5 : R (12/0)
+|   |   |   |   |    Left Distance >= 4.5
+|   |   |   |   |   |    Right Distance < 3.5
+|   |   |   |   |   |   |    Left Weight < 1.5 : R (1/0)
+|   |   |   |   |   |   |    Left Weight >= 1.5 : L (1/0)
+|   |   |   |   |   |    Right Distance >= 3.5 : R (4/0)
+|   |   |   |    Right Weight >= 3.5 : R (36/0)
+|    Left Weight >= 2.5
+|   |    Right Weight < 2.5
+|   |   |    Right Distance < 4.5 : L (72/0)
+|   |   |    Right Distance >= 4.5
+|   |   |   |    Left Weight < 3.5
+|   |   |   |   |    Left Distance < 3.5
+|   |   |   |   |   |    Right Weight < 1.5 : L (1/0)
+|   |   |   |   |   |    Right Weight >= 1.5 : R (1/0)
+|   |   |   |   |    Left Distance >= 3.5 : L (4/0)
+|   |   |   |    Left Weight >= 3.5 : L (12/0)
+|   |    Right Weight >= 2.5
+|   |   |    Right Distance < 2.5
+|   |   |   |    Left Weight < 3.5
+|   |   |   |   |    Left Distance < 3.5
+|   |   |   |   |   |    Right Weight < 4.5 : L (4/0)
+|   |   |   |   |   |    Right Weight >= 4.5
+|   |   |   |   |   |   |    Right Distance < 1.5 : L (1/0)
+|   |   |   |   |   |   |    Right Distance >= 1.5 : R (1/0)
+|   |   |   |   |    Left Distance >= 3.5 : L (12/0)
+|   |   |   |    Left Weight >= 3.5 : L (36/0)
+|   |   |    Right Distance >= 2.5
+|   |   |   |    Left Weight < 3.5
+|   |   |   |   |    Right Weight < 3.5
+|   |   |   |   |   |    Right Distance < 3.5
+|   |   |   |   |   |   |    Left Distance < 3.5 : B (1/0)
+|   |   |   |   |   |   |    Left Distance >= 3.5 : L (2/0)
+|   |   |   |   |   |    Right Distance >= 3.5
+|   |   |   |   |   |   |    Left Distance < 4.5
+|   |   |   |   |   |   |   |    Right Distance < 4.5
+|   |   |   |   |   |   |   |   |    Left Distance < 3.5 : R (1/0)
+|   |   |   |   |   |   |   |   |    Left Distance >= 3.5 : B (1/0)
+|   |   |   |   |   |   |   |    Right Distance >= 4.5 : R (2/0)
+|   |   |   |   |   |   |    Left Distance >= 4.5
+|   |   |   |   |   |   |   |    Right Distance < 4.5 : L (1/0)
+|   |   |   |   |   |   |   |    Right Distance >= 4.5 : B (1/0)
+|   |   |   |   |    Right Weight >= 3.5
+|   |   |   |   |   |    Right Distance < 3.5
+|   |   |   |   |   |   |    Left Distance < 4.5
+|   |   |   |   |   |   |   |    Left Distance < 3.5 : R (2/0)
+|   |   |   |   |   |   |   |    Left Distance >= 3.5
+|   |   |   |   |   |   |   |   |    Right Weight < 4.5 : B (1/0)
+|   |   |   |   |   |   |   |   |    Right Weight >= 4.5 : R (1/0)
+|   |   |   |   |   |   |    Left Distance >= 4.5
+|   |   |   |   |   |   |   |    Right Weight < 4.5 : L (1/0)
+|   |   |   |   |   |   |   |    Right Weight >= 4.5 : B (1/0)
+|   |   |   |   |   |    Right Distance >= 3.5 : R (12/0)
+|   |   |   |    Left Weight >= 3.5
+|   |   |   |   |    Left Distance < 3.5
+|   |   |   |   |   |    Right Weight < 3.5
+|   |   |   |   |   |   |    Right Distance < 4.5
+|   |   |   |   |   |   |   |    Right Distance < 3.5 : L (2/0)
+|   |   |   |   |   |   |   |    Right Distance >= 3.5
+|   |   |   |   |   |   |   |   |    Left Weight < 4.5 : B (1/0)
+|   |   |   |   |   |   |   |   |    Left Weight >= 4.5 : L (1/0)
+|   |   |   |   |   |   |    Right Distance >= 4.5
+|   |   |   |   |   |   |   |    Left Weight < 4.5 : R (1/0)
+|   |   |   |   |   |   |   |    Left Weight >= 4.5 : B (1/0)
+|   |   |   |   |   |    Right Weight >= 3.5
+|   |   |   |   |   |   |    Right Distance < 3.5
+|   |   |   |   |   |   |   |    Left Weight < 4.5
+|   |   |   |   |   |   |   |   |    Right Weight < 4.5 : B (1/0)
+|   |   |   |   |   |   |   |   |    Right Weight >= 4.5 : R (1/0)
+|   |   |   |   |   |   |   |    Left Weight >= 4.5
+|   |   |   |   |   |   |   |   |    Right Weight < 4.5 : L (1/0)
+|   |   |   |   |   |   |   |   |    Right Weight >= 4.5 : B (1/0)
+|   |   |   |   |   |   |    Right Distance >= 3.5 : R (8/0)
+|   |   |   |   |    Left Distance >= 3.5
+|   |   |   |   |   |    Right Weight < 3.5 : L (12/0)
+|   |   |   |   |   |    Right Weight >= 3.5
+|   |   |   |   |   |   |    Left Weight < 4.5
+|   |   |   |   |   |   |   |    Left Distance < 4.5
+|   |   |   |   |   |   |   |   |    Right Weight < 4.5
+|   |   |   |   |   |   |   |   |   |    Right Distance < 3.5 : L (1/0)
+|   |   |   |   |   |   |   |   |   |    Right Distance >= 3.5
+|   |   |   |   |   |   |   |   |   |   |    Right Distance < 4.5 : B (1/0)
+|   |   |   |   |   |   |   |   |   |   |    Right Distance >= 4.5 : R (1/0)
+|   |   |   |   |   |   |   |   |    Right Weight >= 4.5
+|   |   |   |   |   |   |   |   |   |    Right Distance < 3.5 : L (1/0)
+|   |   |   |   |   |   |   |   |   |    Right Distance >= 3.5 : R (2/0)
+|   |   |   |   |   |   |   |    Left Distance >= 4.5
+|   |   |   |   |   |   |   |   |    Right Distance < 4.5
+|   |   |   |   |   |   |   |   |   |    Right Weight < 4.5 : L (2/0)
+|   |   |   |   |   |   |   |   |   |    Right Weight >= 4.5
+|   |   |   |   |   |   |   |   |   |   |    Right Distance < 3.5 : L (1/0)
+|   |   |   |   |   |   |   |   |   |   |    Right Distance >= 3.5 : B (1/0)
+|   |   |   |   |   |   |   |   |    Right Distance >= 4.5
+|   |   |   |   |   |   |   |   |   |    Right Weight < 4.5 : B (1/0)
+|   |   |   |   |   |   |   |   |   |    Right Weight >= 4.5 : R (1/0)
+|   |   |   |   |   |   |    Left Weight >= 4.5
+|   |   |   |   |   |   |   |    Left Distance < 4.5
+|   |   |   |   |   |   |   |   |    Right Distance < 4.5
+|   |   |   |   |   |   |   |   |   |    Right Weight < 4.5 : L (2/0)
+|   |   |   |   |   |   |   |   |   |    Right Weight >= 4.5
+|   |   |   |   |   |   |   |   |   |   |    Right Distance < 3.5 : L (1/0)
+|   |   |   |   |   |   |   |   |   |   |    Right Distance >= 3.5 : B (1/0)
+|   |   |   |   |   |   |   |   |    Right Distance >= 4.5
+|   |   |   |   |   |   |   |   |   |    Right Weight < 4.5 : B (1/0)
+|   |   |   |   |   |   |   |   |   |    Right Weight >= 4.5 : R (1/0)
+|   |   |   |   |   |   |   |    Left Distance >= 4.5
+|   |   |   |   |   |   |   |   |    Right Weight < 4.5 : L (3/0)
+|   |   |   |   |   |   |   |   |    Right Weight >= 4.5
+|   |   |   |   |   |   |   |   |   |    Right Distance < 4.5 : L (2/0)
+|   |   |   |   |   |   |   |   |   |    Right Distance >= 4.5 : B (1/0)
+
+Size of the tree : 335
+
+Time taken to build model: 0 seconds
+
+=== Stratified cross-validation ===
+=== Summary ===
+
+Correctly Classified Instances         490               78.4    %
+Incorrectly Classified Instances       135               21.6    %
+Kappa statistic                          0.6293
+Mean absolute error                      0.144 
+Root mean squared error                  0.3795
+Relative absolute error                 37.9143 %
+Root relative squared error             87.1181 %
+Total Number of Instances              625     
+
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0.000    0.123    0.000      0.000    0.000      -0.104   0.438     0.078     B
+                 0.844    0.083    0.897      0.844    0.869      0.765    0.880     0.829     R
+                 0.858    0.107    0.873      0.858    0.865      0.752    0.875     0.814     L
+Weighted Avg.    0.784    0.097    0.815      0.784    0.799      0.691    0.843     0.763     
+
+=== Confusion Matrix ===
+
+   a   b   c   <-- classified as
+   0  21  28 |   a = B
+  37 243   8 |   b = R
+  34   7 247 |   c = L

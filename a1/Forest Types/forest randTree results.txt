@@ -1,0 +1,217 @@
+=== Run information ===
+
+Scheme:       weka.classifiers.trees.RandomTree -K 0 -M 1.0 -V 0.001 -S 1
+Relation:     training
+Instances:    523
+Attributes:   28
+              class
+              b1
+              b2
+              b3
+              b4
+              b5
+              b6
+              b7
+              b8
+              b9
+              pred_minus_obs_H_b1
+              pred_minus_obs_H_b2
+              pred_minus_obs_H_b3
+              pred_minus_obs_H_b4
+              pred_minus_obs_H_b5
+              pred_minus_obs_H_b6
+              pred_minus_obs_H_b7
+              pred_minus_obs_H_b8
+              pred_minus_obs_H_b9
+              pred_minus_obs_S_b1
+              pred_minus_obs_S_b2
+              pred_minus_obs_S_b3
+              pred_minus_obs_S_b4
+              pred_minus_obs_S_b5
+              pred_minus_obs_S_b6
+              pred_minus_obs_S_b7
+              pred_minus_obs_S_b8
+              pred_minus_obs_S_b9
+Test mode:    10-fold cross-validation
+
+=== Classifier model (full training set) ===
+
+
+RandomTree
+==========
+
+pred_minus_obs_H_b5 < -31.09
+|   b9 < 67.5
+|   |   pred_minus_obs_H_b3 < 43.8
+|   |   |   pred_minus_obs_H_b9 < -4.56
+|   |   |   |   b2 < 39
+|   |   |   |   |   b7 < 89.5 : o  (3/0)
+|   |   |   |   |   b7 >= 89.5 : s  (1/0)
+|   |   |   |   b2 >= 39
+|   |   |   |   |   pred_minus_obs_H_b9 < -4.89
+|   |   |   |   |   |   b9 < 62.5 : d  (8/0)
+|   |   |   |   |   |   b9 >= 62.5
+|   |   |   |   |   |   |   b2 < 53.5
+|   |   |   |   |   |   |   |   b4 < 95.5 : d  (2/0)
+|   |   |   |   |   |   |   |   b4 >= 95.5
+|   |   |   |   |   |   |   |   |   b6 < 111.5
+|   |   |   |   |   |   |   |   |   |   b3 < 63.5 : o  (1/0)
+|   |   |   |   |   |   |   |   |   |   b3 >= 63.5 : d  (3/0)
+|   |   |   |   |   |   |   |   |   b6 >= 111.5 : o  (4/0)
+|   |   |   |   |   |   |   b2 >= 53.5 : d  (5/0)
+|   |   |   |   |   pred_minus_obs_H_b9 >= -4.89 : o  (2/0)
+|   |   |   pred_minus_obs_H_b9 >= -4.56
+|   |   |   |   b9 < 61.5
+|   |   |   |   |   pred_minus_obs_H_b6 < -35.67
+|   |   |   |   |   |   pred_minus_obs_H_b7 < 21.46
+|   |   |   |   |   |   |   pred_minus_obs_H_b3 < 34.27
+|   |   |   |   |   |   |   |   b6 < 103.5
+|   |   |   |   |   |   |   |   |   b8 < 25.5
+|   |   |   |   |   |   |   |   |   |   pred_minus_obs_H_b3 < 34.1
+|   |   |   |   |   |   |   |   |   |   |   pred_minus_obs_S_b1 < -18.02
+|   |   |   |   |   |   |   |   |   |   |   |   pred_minus_obs_H_b3 < 11.21
+|   |   |   |   |   |   |   |   |   |   |   |   |   b3 < 88.5 : o  (1/0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   b3 >= 88.5 : d  (2/0)
+|   |   |   |   |   |   |   |   |   |   |   |   pred_minus_obs_H_b3 >= 11.21 : d  (11/0)
+|   |   |   |   |   |   |   |   |   |   |   pred_minus_obs_S_b1 >= -18.02
+|   |   |   |   |   |   |   |   |   |   |   |   b4 < 83.5 : o  (1/0)
+|   |   |   |   |   |   |   |   |   |   |   |   b4 >= 83.5 : d  (1/0)
+|   |   |   |   |   |   |   |   |   |   pred_minus_obs_H_b3 >= 34.1 : o  (1/0)
+|   |   |   |   |   |   |   |   |   b8 >= 25.5 : d  (26/0)
+|   |   |   |   |   |   |   |   b6 >= 103.5 : d  (25/0)
+|   |   |   |   |   |   |   pred_minus_obs_H_b3 >= 34.27 : d  (36/0)
+|   |   |   |   |   |   pred_minus_obs_H_b7 >= 21.46 : o  (1/0)
+|   |   |   |   |   pred_minus_obs_H_b6 >= -35.67
+|   |   |   |   |   |   b1 < 60 : d  (6/0)
+|   |   |   |   |   |   b1 >= 60
+|   |   |   |   |   |   |   pred_minus_obs_H_b1 < 47.31 : o  (1/0)
+|   |   |   |   |   |   |   pred_minus_obs_H_b1 >= 47.31 : s  (1/0)
+|   |   |   |   b9 >= 61.5 : h  (1/0)
+|   |   pred_minus_obs_H_b3 >= 43.8
+|   |   |   b1 < 50.5
+|   |   |   |   pred_minus_obs_S_b4 < -23.76 : s  (2/0)
+|   |   |   |   pred_minus_obs_S_b4 >= -23.76 : d  (3/0)
+|   |   |   b1 >= 50.5
+|   |   |   |   pred_minus_obs_H_b9 < -2.74
+|   |   |   |   |   pred_minus_obs_H_b7 < -6.41 : h  (2/0)
+|   |   |   |   |   pred_minus_obs_H_b7 >= -6.41 : s  (2/0)
+|   |   |   |   pred_minus_obs_H_b9 >= -2.74 : s  (9/0)
+|   b9 >= 67.5
+|   |   pred_minus_obs_H_b8 < -4.68 : o  (63/0)
+|   |   pred_minus_obs_H_b8 >= -4.68
+|   |   |   pred_minus_obs_H_b9 < -13.42 : d  (2/0)
+|   |   |   pred_minus_obs_H_b9 >= -13.42 : o  (3/0)
+pred_minus_obs_H_b5 >= -31.09
+|   pred_minus_obs_H_b7 < -11.72
+|   |   pred_minus_obs_H_b4 < -13.05
+|   |   |   pred_minus_obs_S_b1 < -6.54
+|   |   |   |   pred_minus_obs_H_b1 < 61.89 : h  (54/0)
+|   |   |   |   pred_minus_obs_H_b1 >= 61.89 : d  (1/0)
+|   |   |   pred_minus_obs_S_b1 >= -6.54 : s  (2/0)
+|   |   pred_minus_obs_H_b4 >= -13.05
+|   |   |   b1 < 69.5
+|   |   |   |   b3 < 56.5
+|   |   |   |   |   pred_minus_obs_H_b5 < -23.59
+|   |   |   |   |   |   pred_minus_obs_S_b6 < -5.78
+|   |   |   |   |   |   |   b5 < 51 : o  (1/0)
+|   |   |   |   |   |   |   b5 >= 51 : s  (3/0)
+|   |   |   |   |   |   pred_minus_obs_S_b6 >= -5.78 : s  (13/0)
+|   |   |   |   |   pred_minus_obs_H_b5 >= -23.59
+|   |   |   |   |   |   b4 < 98 : s  (3/0)
+|   |   |   |   |   |   b4 >= 98
+|   |   |   |   |   |   |   b2 < 27.5
+|   |   |   |   |   |   |   |   pred_minus_obs_H_b4 < -6.38 : h  (1/0)
+|   |   |   |   |   |   |   |   pred_minus_obs_H_b4 >= -6.38 : s  (1/0)
+|   |   |   |   |   |   |   b2 >= 27.5 : h  (1/0)
+|   |   |   |   b3 >= 56.5 : d  (5/0)
+|   |   |   b1 >= 69.5
+|   |   |   |   pred_minus_obs_S_b1 < -20.97 : h  (10/0)
+|   |   |   |   pred_minus_obs_S_b1 >= -20.97
+|   |   |   |   |   b8 < 25.5
+|   |   |   |   |   |   pred_minus_obs_H_b4 < -9.8 : s  (2/0)
+|   |   |   |   |   |   pred_minus_obs_H_b4 >= -9.8 : h  (7/0)
+|   |   |   |   |   b8 >= 25.5
+|   |   |   |   |   |   pred_minus_obs_H_b1 < 29.04 : h  (1/0)
+|   |   |   |   |   |   pred_minus_obs_H_b1 >= 29.04
+|   |   |   |   |   |   |   b9 < 57.5 : h  (1/0)
+|   |   |   |   |   |   |   b9 >= 57.5 : s  (5/0)
+|   pred_minus_obs_H_b7 >= -11.72
+|   |   pred_minus_obs_H_b1 < 36.74 : h  (3/0)
+|   |   pred_minus_obs_H_b1 >= 36.74
+|   |   |   pred_minus_obs_H_b8 < 1.23
+|   |   |   |   b7 < 72.5 : o  (1/0)
+|   |   |   |   b7 >= 72.5 : d  (1/0)
+|   |   |   pred_minus_obs_H_b8 >= 1.23
+|   |   |   |   pred_minus_obs_H_b5 < -25.93
+|   |   |   |   |   b1 < 52.5
+|   |   |   |   |   |   pred_minus_obs_S_b1 < -20.52
+|   |   |   |   |   |   |   b4 < 95.5
+|   |   |   |   |   |   |   |   pred_minus_obs_H_b1 < 81.13 : s  (14/0)
+|   |   |   |   |   |   |   |   pred_minus_obs_H_b1 >= 81.13 : d  (1/0)
+|   |   |   |   |   |   |   b4 >= 95.5 : d  (4/0)
+|   |   |   |   |   |   pred_minus_obs_S_b1 >= -20.52
+|   |   |   |   |   |   |   pred_minus_obs_S_b9 < -3.52 : d  (9/0)
+|   |   |   |   |   |   |   pred_minus_obs_S_b9 >= -3.52
+|   |   |   |   |   |   |   |   pred_minus_obs_S_b5 < -1 : d  (2/0)
+|   |   |   |   |   |   |   |   pred_minus_obs_S_b5 >= -1
+|   |   |   |   |   |   |   |   |   pred_minus_obs_H_b5 < -29.34 : d  (1/0)
+|   |   |   |   |   |   |   |   |   pred_minus_obs_H_b5 >= -29.34 : s  (4/0)
+|   |   |   |   |   b1 >= 52.5
+|   |   |   |   |   |   pred_minus_obs_H_b4 < 12.94
+|   |   |   |   |   |   |   b4 < 102.5 : s  (24/0)
+|   |   |   |   |   |   |   b4 >= 102.5 : h  (2/0)
+|   |   |   |   |   |   pred_minus_obs_H_b4 >= 12.94
+|   |   |   |   |   |   |   b1 < 54.5 : h  (1/0)
+|   |   |   |   |   |   |   b1 >= 54.5 : d  (1/0)
+|   |   |   |   pred_minus_obs_H_b5 >= -25.93
+|   |   |   |   |   b2 < 28.5
+|   |   |   |   |   |   pred_minus_obs_H_b5 < -18.95
+|   |   |   |   |   |   |   b9 < 59.5 : s  (81/0)
+|   |   |   |   |   |   |   b9 >= 59.5 : h  (1/0)
+|   |   |   |   |   |   pred_minus_obs_H_b5 >= -18.95 : h  (1/0)
+|   |   |   |   |   b2 >= 28.5
+|   |   |   |   |   |   pred_minus_obs_S_b3 < -4.68
+|   |   |   |   |   |   |   b9 < 51.5 : d  (2/0)
+|   |   |   |   |   |   |   b9 >= 51.5
+|   |   |   |   |   |   |   |   pred_minus_obs_H_b4 < 2.64
+|   |   |   |   |   |   |   |   |   b7 < 81.5 : s  (2/0)
+|   |   |   |   |   |   |   |   |   b7 >= 81.5
+|   |   |   |   |   |   |   |   |   |   b9 < 58.5 : d  (2/0)
+|   |   |   |   |   |   |   |   |   |   b9 >= 58.5 : s  (1/0)
+|   |   |   |   |   |   |   |   pred_minus_obs_H_b4 >= 2.64 : s  (10/0)
+|   |   |   |   |   |   pred_minus_obs_S_b3 >= -4.68 : s  (15/0)
+
+Size of the tree : 141
+
+Time taken to build model: 0 seconds
+
+=== Stratified cross-validation ===
+=== Summary ===
+
+Correctly Classified Instances         441               84.3212 %
+Incorrectly Classified Instances        82               15.6788 %
+Kappa statistic                          0.7814
+Mean absolute error                      0.0784
+Root mean squared error                  0.28  
+Relative absolute error                 21.8779 %
+Root relative squared error             66.1595 %
+Total Number of Instances              523     
+
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0.799    0.071    0.830      0.799    0.814      0.735    0.864     0.724     d 
+                 0.837    0.030    0.847      0.837    0.842      0.811    0.904     0.736     h 
+                 0.892    0.070    0.883      0.892    0.888      0.821    0.911     0.828     s 
+                 0.819    0.045    0.773      0.819    0.795      0.756    0.887     0.662     o 
+Weighted Avg.    0.843    0.060    0.844      0.843    0.843      0.783    0.892     0.755     
+
+=== Confusion Matrix ===
+
+   a   b   c   d   <-- classified as
+ 127   3  10  19 |   a = d 
+   4  72  10   0 |   b = h 
+  10  10 174   1 |   c = s 
+  12   0   3  68 |   d = o 
+
+

@@ -1,0 +1,80 @@
+=== Run information ===
+
+Scheme:       weka.classifiers.trees.RandomTree -K 0 -M 1.0 -V 0.001 -S 1
+Relation:     bankrupt_qualitative
+Instances:    250
+Attributes:   7
+              IR
+              MR
+              FF
+              CR
+              CO
+              OP
+              Class
+Test mode:    10-fold cross-validation
+
+=== Classifier model (full training set) ===
+
+
+RandomTree
+==========
+
+FF = P
+|   IR = P : NB (25/0)
+|   IR = A : NB (15/0)
+|   IR = N
+|   |   CO = P : NB (12/0)
+|   |   CO = A : NB (4/0)
+|   |   CO = N : B (1/0)
+FF = A
+|   CO = P : NB (38/0)
+|   CO = A : NB (32/0)
+|   CO = N : B (4/0)
+FF = N
+|   CR = P
+|   |   IR = P : NB (1/0)
+|   |   IR = A : NB (10/0)
+|   |   IR = N
+|   |   |   MR = P : NB (2/0)
+|   |   |   MR = A : B (0/0)
+|   |   |   MR = N : B (3/0)
+|   CR = A
+|   |   IR = P : NB (2/0)
+|   |   IR = A
+|   |   |   MR = P : B (4/0)
+|   |   |   MR = A : B (0/0)
+|   |   |   MR = N : NB (1/0)
+|   |   IR = N : B (12/0)
+|   CR = N
+|   |   CO = P : NB (1/0)
+|   |   CO = A : B (4/0)
+|   |   CO = N : B (79/0)
+
+Size of the tree : 31
+
+Time taken to build model: 0 seconds
+
+=== Stratified cross-validation ===
+=== Summary ===
+
+Correctly Classified Instances         247               98.8    %
+Incorrectly Classified Instances         3                1.2    %
+Kappa statistic                          0.9755
+Mean absolute error                      0.012 
+Root mean squared error                  0.1095
+Relative absolute error                  2.45   %
+Root relative squared error             22.1361 %
+Total Number of Instances              250     
+
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0.991    0.014    0.981      0.991    0.986      0.976    0.988     0.976     B
+                 0.986    0.009    0.993      0.986    0.989      0.976    0.988     0.987     NB
+Weighted Avg.    0.988    0.011    0.988      0.988    0.988      0.976    0.988     0.982     
+
+=== Confusion Matrix ===
+
+   a   b   <-- classified as
+ 106   1 |   a = B
+   2 141 |   b = NB

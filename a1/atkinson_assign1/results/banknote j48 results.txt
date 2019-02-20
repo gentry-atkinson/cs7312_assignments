@@ -1,0 +1,78 @@
+=== Run information ===
+
+Scheme:       weka.classifiers.trees.J48 -C 0.25 -M 2
+Relation:     data_banknote_authentication.txt-weka.filters.unsupervised.attribute.NumericToNominal-Rlast
+Instances:    1372
+Attributes:   5
+              Variance
+               Skewness
+               Curtosis
+               Entropy
+               Class
+Test mode:    10-fold cross-validation
+
+=== Classifier model (full training set) ===
+
+J48 pruned tree
+------------------
+
+Variance <= 0.31803
+|    Skewness <= 5.8561
+|   |    Curtosis <= 6.2169: 1 (365.0/2.0)
+|   |    Curtosis > 6.2169
+|   |   |    Skewness <= -4.7076: 1 (131.0/1.0)
+|   |   |    Skewness > -4.7076: 0 (25.0/1.0)
+|    Skewness > 5.8561
+|   |   Variance <= -3.4605: 1 (40.0/1.0)
+|   |   Variance > -3.4605: 0 (96.0)
+Variance > 0.31803
+|    Curtosis <= -4.3882
+|   |    Skewness <= 7.1907: 1 (32.0)
+|   |    Skewness > 7.1907: 0 (10.0)
+|    Curtosis > -4.3882
+|   |   Variance <= 2.031
+|   |   |    Curtosis <= -2.2726
+|   |   |   |    Skewness <= 5.6574: 1 (27.0)
+|   |   |   |    Skewness > 5.6574: 0 (5.0)
+|   |   |    Curtosis > -2.2726
+|   |   |   |    Entropy <= 0.087054: 0 (151.0/1.0)
+|   |   |   |    Entropy > 0.087054
+|   |   |   |   |    Curtosis <= -0.023425: 1 (13.0)
+|   |   |   |   |    Curtosis > -0.023425
+|   |   |   |   |   |    Skewness <= -0.30005
+|   |   |   |   |   |   |    Curtosis <= 3.643: 1 (4.0)
+|   |   |   |   |   |   |    Curtosis > 3.643: 0 (3.0)
+|   |   |   |   |   |    Skewness > -0.30005: 0 (37.0)
+|   |   Variance > 2.031: 0 (433.0)
+
+Number of Leaves  : 	15
+
+Size of the tree : 	29
+
+
+Time taken to build model: 0 seconds
+
+=== Stratified cross-validation ===
+=== Summary ===
+
+Correctly Classified Instances        1352               98.5423 %
+Incorrectly Classified Instances        20                1.4577 %
+Kappa statistic                          0.9705
+Mean absolute error                      0.0181
+Root mean squared error                  0.1208
+Relative absolute error                  3.6704 %
+Root relative squared error             24.3113 %
+Total Number of Instances             1372     
+
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0.986    0.015    0.988      0.986    0.987      0.970    0.986     0.984     0
+                 0.985    0.014    0.982      0.985    0.984      0.970    0.986     0.977     1
+Weighted Avg.    0.985    0.015    0.985      0.985    0.985      0.970    0.986     0.981     
+
+=== Confusion Matrix ===
+
+   a   b   <-- classified as
+ 751  11 |   a = 0
+   9 601 |   b = 1

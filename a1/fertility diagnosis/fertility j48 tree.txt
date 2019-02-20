@@ -1,0 +1,55 @@
+=== Run information ===
+
+Scheme:       weka.classifiers.trees.J48 -C 0.25 -M 2
+Relation:     fertility_Diagnosis.txt
+Instances:    100
+Attributes:   10
+              Season
+               Age
+               Childhood Disease
+               Trauma
+               Intervention
+               Fever
+               Alcohol
+               Smoking
+               Hours Sitting
+               Output
+Test mode:    10-fold cross-validation
+
+=== Classifier model (full training set) ===
+
+J48 pruned tree
+------------------
+: N (100.0/12.0)
+
+Number of Leaves  : 	1
+
+Size of the tree : 	1
+
+
+Time taken to build model: 0 seconds
+
+=== Stratified cross-validation ===
+=== Summary ===
+
+Correctly Classified Instances          85               85      %
+Incorrectly Classified Instances        15               15      %
+Kappa statistic                         -0.0504
+Mean absolute error                      0.2243
+Root mean squared error                  0.3628
+Relative absolute error                102.9718 %
+Root relative squared error            111.4246 %
+Total Number of Instances              100     
+
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0.966    1.000    0.876      0.966    0.919      -0.065   0.434     0.878     N
+                 0.000    0.034    0.000      0.000    0.000      -0.065   0.434     0.109     O
+Weighted Avg.    0.850    0.884    0.771      0.850    0.809      -0.065   0.434     0.786     
+
+=== Confusion Matrix ===
+
+  a  b   <-- classified as
+ 85  3 |  a = N
+ 12  0 |  b = O

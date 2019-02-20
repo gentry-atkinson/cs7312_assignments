@@ -1,0 +1,111 @@
+=== Run information ===
+
+Scheme:       weka.classifiers.trees.RandomTree -K 0 -M 1.0 -V 0.001 -S 1
+Relation:     fertility_Diagnosis.txt
+Instances:    100
+Attributes:   10
+              Season
+               Age
+               Childhood Disease
+               Trauma
+               Intervention
+               Fever
+               Alcohol
+               Smoking
+               Hours Sitting
+               Output
+Test mode:    10-fold cross-validation
+
+=== Classifier model (full training set) ===
+
+
+RandomTree
+==========
+
+ Alcohol < 0.9
+|   Season < 0
+|   |    Fever < 0.5
+|   |   |    Hours Sitting < 0.28 : N (7/0)
+|   |   |    Hours Sitting >= 0.28
+|   |   |   |    Hours Sitting < 0.81
+|   |   |   |   |    Fever < -0.5 : N (3/0)
+|   |   |   |   |    Fever >= -0.5
+|   |   |   |   |   |    Age < 0.66 : N (8/0)
+|   |   |   |   |   |    Age >= 0.66
+|   |   |   |   |   |   |    Age < 0.97
+|   |   |   |   |   |   |   |    Smoking < -0.5 : O (1/0)
+|   |   |   |   |   |   |   |    Smoking >= -0.5
+|   |   |   |   |   |   |   |   |    Intervention < 0.5 : N (1/0)
+|   |   |   |   |   |   |   |   |    Intervention >= 0.5
+|   |   |   |   |   |   |   |   |   |    Age < 0.8
+|   |   |   |   |   |   |   |   |   |   |    Childhood Disease < 0.5 : O (1/0)
+|   |   |   |   |   |   |   |   |   |   |    Childhood Disease >= 0.5 : N (1/0)
+|   |   |   |   |   |   |   |   |   |    Age >= 0.8 : O (1/0)
+|   |   |   |   |   |   |    Age >= 0.97 : N (1/0)
+|   |   |   |    Hours Sitting >= 0.81
+|   |   |   |   |    Childhood Disease < 0.5 : N (1/0)
+|   |   |   |   |    Childhood Disease >= 0.5 : N (2/1)
+|   |    Fever >= 0.5 : N (13/0)
+|   Season >= 0
+|   |    Hours Sitting < 0.34
+|   |   |    Trauma < 0.5
+|   |   |   |    Age < 0.68 : N (2/0)
+|   |   |   |    Age >= 0.68
+|   |   |   |   |    Alcohol < 0.7 : N (1/0)
+|   |   |   |   |    Alcohol >= 0.7 : O (1/0)
+|   |   |    Trauma >= 0.5 : N (5/0)
+|   |    Hours Sitting >= 0.34
+|   |   |    Intervention < 0.5
+|   |   |   |    Childhood Disease < 0.5 : N (2/0)
+|   |   |   |    Childhood Disease >= 0.5
+|   |   |   |   |    Hours Sitting < 0.44
+|   |   |   |   |   |    Fever < 0.5
+|   |   |   |   |   |   |    Smoking < 0 : N (1/0)
+|   |   |   |   |   |   |    Smoking >= 0 : O (1/0)
+|   |   |   |   |   |    Fever >= 0.5 : O (1/0)
+|   |   |   |   |    Hours Sitting >= 0.44 : N (2/0)
+|   |   |    Intervention >= 0.5
+|   |   |   |    Alcohol < 0.7 : O (2/0)
+|   |   |   |    Alcohol >= 0.7
+|   |   |   |   |    Age < 0.67 : N (1/0)
+|   |   |   |   |    Age >= 0.67 : O (1/0)
+ Alcohol >= 0.9
+|    Fever < -0.5
+|   |   Season < 0.33 : N (1/0)
+|   |   Season >= 0.33 : O (1/0)
+|    Fever >= -0.5
+|   |    Age < 0.77 : N (28/0)
+|   |    Age >= 0.77
+|   |   |    Hours Sitting < 0.15
+|   |   |   |   Season < 0 : O (1/0)
+|   |   |   |   Season >= 0 : N (1/0)
+|   |   |    Hours Sitting >= 0.15 : N (8/0)
+
+Size of the tree : 59
+
+Time taken to build model: 0 seconds
+
+=== Stratified cross-validation ===
+=== Summary ===
+
+Correctly Classified Instances          81               81      %
+Incorrectly Classified Instances        19               19      %
+Kappa statistic                          0.2376
+Mean absolute error                      0.205 
+Root mean squared error                  0.4444
+Relative absolute error                 94.1118 %
+Root relative squared error            136.4768 %
+Total Number of Instances              100     
+
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0.864    0.583    0.916      0.864    0.889      0.242    0.630     0.908     N
+                 0.417    0.136    0.294      0.417    0.345      0.242    0.630     0.193     O
+Weighted Avg.    0.810    0.530    0.841      0.810    0.824      0.242    0.630     0.822     
+
+=== Confusion Matrix ===
+
+  a  b   <-- classified as
+ 76 12 |  a = N
+  7  5 |  b = O

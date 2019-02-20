@@ -1,0 +1,122 @@
+=== Run information ===
+
+Scheme:       weka.classifiers.trees.J48 -C 0.25 -M 2
+Relation:     training
+Instances:    523
+Attributes:   28
+              class
+              b1
+              b2
+              b3
+              b4
+              b5
+              b6
+              b7
+              b8
+              b9
+              pred_minus_obs_H_b1
+              pred_minus_obs_H_b2
+              pred_minus_obs_H_b3
+              pred_minus_obs_H_b4
+              pred_minus_obs_H_b5
+              pred_minus_obs_H_b6
+              pred_minus_obs_H_b7
+              pred_minus_obs_H_b8
+              pred_minus_obs_H_b9
+              pred_minus_obs_S_b1
+              pred_minus_obs_S_b2
+              pred_minus_obs_S_b3
+              pred_minus_obs_S_b4
+              pred_minus_obs_S_b5
+              pred_minus_obs_S_b6
+              pred_minus_obs_S_b7
+              pred_minus_obs_S_b8
+              pred_minus_obs_S_b9
+Test mode:    10-fold cross-validation
+
+=== Classifier model (full training set) ===
+
+J48 pruned tree
+------------------
+
+b9 <= 67
+|   b2 <= 35
+|   |   pred_minus_obs_H_b1 <= 41.91
+|   |   |   b4 <= 106
+|   |   |   |   b1 <= 75: h  (11.0/1.0)
+|   |   |   |   b1 > 75: s  (3.0)
+|   |   |   b4 > 106: h  (65.0/2.0)
+|   |   pred_minus_obs_H_b1 > 41.91
+|   |   |   b1 <= 42
+|   |   |   |   b5 <= 51: s  (6.0/1.0)
+|   |   |   |   b5 > 51: d  (14.0/1.0)
+|   |   |   b1 > 42
+|   |   |   |   b1 <= 69
+|   |   |   |   |   b4 <= 106
+|   |   |   |   |   |   b2 <= 29: s  (126.0/3.0)
+|   |   |   |   |   |   b2 > 29
+|   |   |   |   |   |   |   b1 <= 50
+|   |   |   |   |   |   |   |   pred_minus_obs_S_b2 <= -0.93: d  (6.0/1.0)
+|   |   |   |   |   |   |   |   pred_minus_obs_S_b2 > -0.93: s  (2.0)
+|   |   |   |   |   |   |   b1 > 50: s  (47.0/1.0)
+|   |   |   |   |   b4 > 106
+|   |   |   |   |   |   b3 <= 53
+|   |   |   |   |   |   |   b5 <= 50: h  (2.0)
+|   |   |   |   |   |   |   b5 > 50: s  (2.0)
+|   |   |   |   |   |   b3 > 53: d  (2.0)
+|   |   |   |   b1 > 69
+|   |   |   |   |   pred_minus_obs_S_b7 <= -22.66: h  (6.0)
+|   |   |   |   |   pred_minus_obs_S_b7 > -22.66: s  (6.0/1.0)
+|   b2 > 35
+|   |   pred_minus_obs_H_b5 <= -27.45
+|   |   |   b8 <= 28: d  (127.0/7.0)
+|   |   |   b8 > 28
+|   |   |   |   b7 <= 95
+|   |   |   |   |   pred_minus_obs_H_b8 <= -7.14: d  (2.0)
+|   |   |   |   |   pred_minus_obs_H_b8 > -7.14: o  (9.0/1.0)
+|   |   |   |   b7 > 95: d  (12.0/1.0)
+|   |   pred_minus_obs_H_b5 > -27.45
+|   |   |   b4 <= 88: d  (2.0)
+|   |   |   b4 > 88: s  (4.0)
+b9 > 67
+|   b8 <= 34
+|   |   b2 <= 60: o  (3.0)
+|   |   b2 > 60: d  (2.0)
+|   b8 > 34: o  (64.0)
+
+Number of Leaves  : 	23
+
+Size of the tree : 	45
+
+
+Time taken to build model: 0.01 seconds
+
+=== Stratified cross-validation ===
+=== Summary ===
+
+Correctly Classified Instances         458               87.5717 %
+Incorrectly Classified Instances        65               12.4283 %
+Kappa statistic                          0.8261
+Mean absolute error                      0.0746
+Root mean squared error                  0.2412
+Relative absolute error                 20.8185 %
+Root relative squared error             56.9957 %
+Total Number of Instances              523     
+
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0.862    0.049    0.884      0.862    0.873      0.818    0.913     0.776     d 
+                 0.849    0.027    0.859      0.849    0.854      0.825    0.948     0.786     h 
+                 0.908    0.076    0.876      0.908    0.892      0.826    0.924     0.874     s 
+                 0.855    0.023    0.877      0.855    0.866      0.841    0.940     0.815     o 
+Weighted Avg.    0.876    0.052    0.876      0.876    0.876      0.826    0.927     0.820     
+
+=== Confusion Matrix ===
+
+   a   b   c   d   <-- classified as
+ 137   1  12   9 |   a = d 
+   0  73  12   1 |   b = h 
+   7  11 177   0 |   c = s 
+  11   0   1  71 |   d = o 
+
