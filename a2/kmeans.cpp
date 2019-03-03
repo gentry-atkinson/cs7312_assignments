@@ -35,9 +35,10 @@ int main(int argc, char** argv){
 	string inFileName = argv[2];
 	ifstream inFile(inFileName);
 	centroid * centroidList = new centroid[k];
-	float maxX = 0, maxY = 0;
+	//float maxX = 0, maxY = 0;
 	bool done;
-	int numLoops = 0;
+	//int numLoops = 0;
+	string palette[] = {"red", "blue", "green", "yellow"};
 
 	//Read in the input file
 	while (!inFile.eof()){
@@ -54,20 +55,20 @@ int main(int argc, char** argv){
 		}
 		inFile >> pointList[numberOfPoints].x;
 		inFile >> pointList[numberOfPoints].y;
-		pointList[numberOfPoints].cluster = 0;
-		if (pointList[numberOfPoints].x > maxX)
-			maxX = pointList[numberOfPoints].x;
-		if (pointList[numberOfPoints].y > maxY)
-			maxY = pointList[numberOfPoints].y;
+		pointList[numberOfPoints].cluster = -1;
+		//if (pointList[numberOfPoints].x > maxX)
+		//	maxX = pointList[numberOfPoints].x;
+		//if (pointList[numberOfPoints].y > maxY)
+		//	maxY = pointList[numberOfPoints].y;
 		numberOfPoints++;
 	}
 
 	//Initialize centroids
 	srand(time(NULL));
-	for (int i = 0; i < k; i++){
+	for (int c = 0; c < k; c++){
 		int randomPoint = rand() % numberOfPoints;
-		centroidList[i].x = pointList[randomPoint].x;
-		centroidList[i].y = pointList[randomPoint].y;
+		centroidList[c].x = pointList[randomPoint].x;
+		centroidList[c].y = pointList[randomPoint].y;
 	}
 
 	//Loop until the centroids do not shift
@@ -94,34 +95,35 @@ int main(int argc, char** argv){
 		for (int c = 0; c < k; c++){
 			xSum[c] = 0;
 			ySum[c] = 0;
-			totalPoints[c] = 1;
+			totalPoints[c] = 0;
 		}
 		for (int p = 0; p < numberOfPoints; p++){
 			xSum[pointList[p].cluster] += pointList[p].x;
 			ySum[pointList[p].cluster] += pointList[p].y;
 			totalPoints[pointList[p].cluster] += 1;
 		}
-		cout << endl << "New Centroids: " << endl;
+		//cout << endl << "New Centroids: " << endl;
 		for (int c = 0; c < k; c++){
-			float newX = xSum[c] / totalPoints[c];
-			float newY = ySum[c] / totalPoints[c];
-			if (newX != centroidList[c].x){
+			float newX = totalPoints[c] > 0?xSum[c] / totalPoints[c]:0;
+			float newY = totalPoints[c] > 0?ySum[c] / totalPoints[c]:0;
+			if (newX != centroidList[c].x && newX != 0){
 				centroidList[c].x = newX;
 				done = false;
 			}
-			if (newY != centroidList[c].y){
+			if (newY != centroidList[c].y && newY != 0){
 				centroidList[c].y = newY;
 				done = false;
 			}
-			cout << "\t#" << c << " " << centroidList[c].x << " " << centroidList[c].y << endl;
+			//cout << "\t#" << c << " " << centroidList[c].x << " " << centroidList[c].y << endl;
 		}
-		numLoops += 1;
-		cout << "Loop: " << numLoops << endl;
+		//numLoops += 1;
+		//cout << "Loop: " << numLoops << endl;
 	}while(!done);
 
 	//output the result
 	for (int p = 0; p < numberOfPoints; p++){
 		cout << pointList[p].x << " " << pointList[p].y << " " << pointList[p].cluster + 1 << endl;
+		//cout << pointList[p].x << " " << pointList[p].y << " " << palette[pointList[p].cluster] << endl;
 	}
 
 	return 0;
@@ -131,5 +133,6 @@ int main(int argc, char** argv){
 float euDis(point p, centroid c){
 	float dist = pow((p.x - c.x), 2) + pow((p.y - c.y), 2);
 	dist = sqrt(dist);
+	//cout << p.x << "," << p.y << " to " << c.x << "," << c.y << " is " << dist << endl;
 	return dist;
 }
