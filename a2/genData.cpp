@@ -23,7 +23,7 @@ int main (int argc, char** argv){
     int numPoints = atoi(argv[3]);
 
     ofstream outFile("randomPoints.txt");
-    float range = clusterRadius * static_cast<float>(numClusters);
+    float range = (clusterRadius * static_cast<float>(numClusters)) ;
     point centroidList[numClusters];
 
     srand(time(NULL));
@@ -38,8 +38,8 @@ int main (int argc, char** argv){
         float thisRadius = rand() % (int)clusterRadius;
         point thisPoint;
 
-        thisPoint.x = centroidList[cluster].x + (thisRadius * cos(theta));
-        thisPoint.y = centroidList[cluster].y + (thisRadius * sin(theta));
+        thisPoint.x = floor(centroidList[cluster].x + (thisRadius * cos(theta)));
+        thisPoint.y = floor(centroidList[cluster].y + (thisRadius * sin(theta)));
 
         outFile << thisPoint.x << " " << thisPoint.y << endl;
     }
