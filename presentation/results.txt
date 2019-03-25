@@ -1,0 +1,4 @@
+Dunn on 3clusters:		0.827127
+Dunn on 4clusters:		0.477804
+Dunn on 5clusters:		0.461635
+
