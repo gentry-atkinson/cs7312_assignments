@@ -1,0 +1,1 @@
+set palette defined ( 1 "red", 2 "blue", 3 "green", 4 "purple", 5 "orange" )
