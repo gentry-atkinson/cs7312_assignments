@@ -5,3 +5,7 @@ Dunn on 5clusters:		0.461635
 HGS on 3clusters:		604.725
 HGS on 4cluster:		620.362
 HGS on 5clusters:		708.7
+
+DB on 3clusters:		0.287533
+DB on 4clusters:		0.35881
+DB on 5clusters:		0.431947

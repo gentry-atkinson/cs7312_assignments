@@ -13,14 +13,15 @@ struct point{
 };
 
 float euDis(point, point);
+float calcS(point*, point, int);
 
 int main(int argc, char** argv){
 	if (argc != 4) {
-		cerr << "Command format is \"dunnIndex num_points num_clusters filename\"" << endl;
+		cerr << "Command format is \"DBindex num_points num_clusters filename\"" << endl;
 		return 1;
 	}
 
-    numeric_limits<float> bound;
+	numeric_limits<float> bound;
 	int numPoints = atoi(argv[1]);
 	int numClusters = atoi(argv[2]);
 	ifstream inFile(argv[3]);
@@ -53,34 +54,20 @@ int main(int argc, char** argv){
         centers[i].cluster = i+1;
 	}
 
-	float minInterClusterDist = bound.max();
-	float maxIntraClusterDist = 0;
+	float D[numClusters];
+	float totalD = 0;
 
-	//calculate min inter-cluster distance
-	for (int i = 0; i < numClusters; i++){
-        for (int j = i; j < numClusters; j++){
-            if (i == j) continue;
-            float thisDist = euDis(centers[i], centers[j]);
-            if (thisDist < minInterClusterDist)
-                minInterClusterDist = thisDist;
+	for (int i = 0; i < numClusters-1; i++){
+        D[i] = 0;
+        for (int j = i+1; j < numClusters; j++){
+            float S = (calcS(points, centers[i], numPoints) + calcS(points, centers[j], numPoints)) / euDis(centers[i], centers[j]);
+            if (S > D[i])
+                D[i] = S;
         }
+        totalD += D[i];
 	}
 
-	//calculate max intra-cluster distance
-	for (int i = 0; i < numPoints; i++){
-        for (int j = i; j < numPoints; j++){
-            if (points[i].cluster == points[j].cluster){
-                float thisDis = euDis(points[i], points[j]);
-                if (thisDis > maxIntraClusterDist)
-                    maxIntraClusterDist = thisDis;
-            }
-        }
-	}
-	cout << "Minimum distance between clusters: " << minInterClusterDist << endl;
-	cout << "Largest size of cluster: " << maxIntraClusterDist << endl;
-
-
-    cout << minInterClusterDist/maxIntraClusterDist << endl;
+	cout << totalD / numClusters << endl;
 
 	return 0;
 }
@@ -89,4 +76,16 @@ float euDis(point p, point c){
 	float dist = pow((p.x - c.x), 2) + pow((p.y - c.y), 2);
 	dist = sqrt(dist);
 	return dist;
+}
+
+float calcS(point* points, point center, int numPoints){
+    int numClusterPoints = 0;
+    float totalDis = 0;
+    for (int i = 0; i < numPoints; i++){
+        if (points[i].cluster == center.cluster){
+            totalDis += euDis(points[i], center);
+            numClusterPoints += 1;
+        }
+    }
+    return totalDis / numClusterPoints;
 }
