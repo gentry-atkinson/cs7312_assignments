@@ -9,7 +9,7 @@
 	<?php
                 function tokenize(&$listOfTokens, $inputString){
                     //match modes
-                    if (preg_match("/[f, F][m, M]/", $inputString)){
+                    if (preg_match("/[fF][mM]/", $inputString)){
                         array_push($listOfTokens, "FM");
                     }
                     else if (preg_match("/[Ff][Uu][Ss][Ii][Oo][Nn]/", $inputString)){
@@ -26,10 +26,7 @@
                     }
                     
                     //match bands
-                    if (preg_match("/5[0-4]./", $inputString)){
-                        array_push($listOfTokens, "6M");
-                    }
-                    else if (preg_match("/14[4-8]./", $inputString)){
+                    if (preg_match("/14[4-8]./", $inputString)){
                         array_push($listOfTokens, "2M");
                     }
                     else if (preg_match("/22[0-5]./", $inputString)){
@@ -44,30 +41,33 @@
                     else if (preg_match("/1[2-3][0-9][0-9]./", $inputString)){
                         array_push($listOfTokens, "23CM");
                     }
-                    else if (preg_match("/6[m, M]/", $inputString)){
+                    else if (preg_match("/5[0-4].[0-9]*/", $inputString)){
                         array_push($listOfTokens, "6M");
                     }
-                    else if (preg_match("/2[m, M]/", $inputString)){
+                    else if (preg_match("/6[mM]/", $inputString)){
+                        array_push($listOfTokens, "6M");
+                    }
+                    else if (preg_match("/2[mM]/", $inputString)){
                         array_push($listOfTokens, "2M");
                     }
-                    else if (preg_match("/1.25[m, M]/", $inputString)){
+                    else if (preg_match("/1.25[mM]/", $inputString)){
                         array_push($listOfTokens, "1.25M");
                     }
-                    else if (preg_match("/70[c, C][m, M]/", $inputString)){
+                    else if (preg_match("/70[c, C][mM]/", $inputString)){
                         array_push($listOfTokens, "70CM");
                     }
-                    else if (preg_match("/33[c, C][m, M]/", $inputString)){
+                    else if (preg_match("/33[c, C][mM]/", $inputString)){
                         array_push($listOfTokens, "33CM");
                     }
-                    else if (preg_match("/23[c, C][m, M]/", $inputString)){
+                    else if (preg_match("/23[c, C][mM]/", $inputString)){
                         array_push($listOfTokens, "23CM");
                     }
 
                     //match squelch
-                    if(preg_match("/[0-9]*.[0-9] [H, h][Z, z]/", $inputString)){
+                    if(preg_match("/[0-9]*.[0-9] [Hh][Zz]/", $inputString)){
                         array_push($listOfTokens, "TONE_SQUELCH");
                     }
-                    else if (preg_match("/[c, C][c, C][0-9]+/", $inputString)){
+                    else if (preg_match("/[cC][cC][0-9]+/", $inputString)){
                         array_push($listOfTokens, "DIGITAL_SQUELCH");
                     }
                     else if (preg_match("/[tT][oO][nN][eE]/", $inputString)){
@@ -97,6 +97,23 @@
                     if ($a->$score == $b->$score) return 0;
                     if ($a->$score < $b->$score) return 1;
                     return -1;
+                }
+
+                function generateCandidateList(&$tokenArray){
+                    $newArray = array();
+                    for ($i = 0; $i < count($tokenArray); ++$i){
+                        $i_string = explode(' ',  $tokenArray[$i]);
+                        for ($j = $i+1; $j < count ($tokenArray); ++$j){
+                            $j_string = explode(' ', $tokenArray[$j]);
+                            if ($j_string == " ") continue;
+                            $intersect = array_intersect($i_string, $j_string);
+                            if(count($i_string) - count($intersect) == 1){
+                                print_r(array_combine($i_string, $j_string));
+                                array_push($newArray, implode(" ", array_merge($i_string, $j_string)));
+                            }
+                        }
+                    }
+                    $tokenArray = $newArray;
                 }
 
 
@@ -136,6 +153,7 @@
                 echo "<br />";
 
                 $docsArray = array();
+                $itemTokensArray = array();
 
                 foreach($pool as $item){
                     $itemTokens = array();
@@ -149,7 +167,8 @@
                     $newDoc->$score = count($intersect)/count($union);
 
                     array_push($docsArray, $newDoc);
-                    
+
+                    array_push($itemTokensArray, $itemTokens);
                 }
 
                 uasort($docsArray, "docSort");
@@ -174,7 +193,14 @@
                     }
                 echo "</table>";
 
-                    fclose( $inFile );
+                print_r($itemTokensArray);
+                foreach ($itemTokensArray as &$a){
+                    generateCandidateList($a);
+                }
+                echo "<br />";
+                print_r($itemTokensArray);
+
+                fclose( $inFile );
 
 	?> 
 
