@@ -24,7 +24,7 @@
                     else if (preg_match("^[Dd][Mm][Rr]/[Bb][Mm]^", $inputString)){
                         array_push($listOfTokens, "DMR/BM");
                     }
-                    
+
                     //match bands
                     if (preg_match("/14[4-8]./", $inputString)){
                         array_push($listOfTokens, "2M");
@@ -99,22 +99,66 @@
                     return -1;
                 }
 
-                function generateCandidateList(&$tokenArray){
-                    $newArray = array();
+                function generateCandidateList($tokenArray, &$candidateArray){
                     for ($i = 0; $i < count($tokenArray); ++$i){
-                        $i_string = explode(' ',  $tokenArray[$i]);
-                        for ($j = $i+1; $j < count ($tokenArray); ++$j){
-                            $j_string = explode(' ', $tokenArray[$j]);
-                            if ($j_string == " ") continue;
-                            $intersect = array_intersect($i_string, $j_string);
-                            if(count($i_string) - count($intersect) == 1){
-                                print_r(array_combine($i_string, $j_string));
-                                array_push($newArray, implode(" ", array_merge($i_string, $j_string)));
-                            }
-                        }
+                        $i_strings = explode(' ',  $tokenArray[$i]);
+												foreach ($i_strings as $i_string){
+													if (!in_array($i_string, $candidateArray)){
+														array_push($candidateArray, $i_string);
+													}
+												}
                     }
-                    $tokenArray = $newArray;
                 }
+
+								function removeCandidates(&$candidateArray, $allTokensArray){
+									$min_sup = 0.01;
+									$totalCount = 0;
+									$itemCounts = array();
+									$newArray = array();
+									$itemCounts = array_fill_keys($candidateArray, 0);
+									if (count($candidateArray) > 0){
+										$oldCandidateArray = $candidateArray;
+									}
+									foreach($candidateArray as $canString){
+										$canArray = explode(' ', $canString);
+										foreach($allTokensArray as $tokenArray){
+											if(array_intersect($canArray, $tokenArray) === $canArray){
+												$itemCounts[$canString] += 1;
+												//print_r($canString);
+												//echo "<br />";
+											}
+											$totalCount += 1;
+										}
+									}
+									foreach ($candidateArray as $candidate) {
+										//print_r($candidate);
+										if ($itemCounts[$candidate]/$totalCount > $min_sup){
+											array_push($newArray, $candidate);
+										}
+									}
+									//print_r ($oldCandidateArray);
+									$candidateArray = $newArray;
+								}
+
+								function updateCandidates(&$candidateArray, &$oldCandidateArray){
+									$newArray = array();
+									for ($i = 0; $i < count($candidateArray); ++$i){
+											$i_string = explode(' ',  $candidateArray[$i]);
+											for ($j = $i+1; $j < count ($candidateArray); ++$j){
+													$j_string = explode(' ', $candidateArray[$j]);
+													if (count($j_string) == 0) continue;
+													$intersect = array_intersect($i_string, $j_string);
+													if(count($i_string) - count($intersect) == 1){
+															//print_r(array_combine($i_string, $j_string));
+															$newCandidate =  array_merge($i_string, $j_string);
+															array_push($newArray, implode(" ", array_unique($newCandidate)));
+														}
+											}
+									}
+									if (count($candidateArray) > 0)
+										$oldCandidateArray = $candidateArray;
+									$candidateArray= $newArray;
+								}
 
 
 		$formdata = array(
@@ -127,12 +171,12 @@
                 foreach ($locations as &$l){
                     $l = strtoupper(trim($l, " "));
                 }
-                print_r($locations);
-		
+                //print_r($locations);
+
 		$filename = "TEXAS_REPEATERS.csv";
 		$inFile = fopen( $filename, "r");
 		$pool = array();
-		
+
                 //generate pool of repeaters
 		while(! feof($inFile)) {
 			$candidate = fgets($inFile);
@@ -146,10 +190,10 @@
 
                 $queryTokens = array();
                 tokenize($queryTokens, $formdata['station_type']);
-                
-                print_r($formdata['station_type']);
+
+                //print_r($formdata['station_type']);
                 echo "<br />";
-                print_r($queryTokens);
+                //print_r($queryTokens);
                 echo "<br />";
 
                 $docsArray = array();
@@ -193,16 +237,31 @@
                     }
                 echo "</table>";
 
-                print_r($itemTokensArray);
+								$candidateArray = array();
                 foreach ($itemTokensArray as &$a){
-                    generateCandidateList($a);
+                    generateCandidateList($a, $candidateArray);
                 }
-                echo "<br />";
-                print_r($itemTokensArray);
+                echo "<br /><br /><br /><br />";
+								$oldCandidateArray = $candidateArray;
+								while (count($candidateArray) > 0){
+									removeCandidates($candidateArray, $itemTokensArray);
+									updateCandidates($candidateArray, $oldCandidateArray);
+								}
+
+              //  print_r($candidateArray);
+							//	print_r($oldCandidateArray);
+								echo "The best radio to purchase is your area should support: ";
+								echo "<ul>";
+								$winner = explode(' ', $oldCandidateArray[0]);
+								foreach ($winner as $li){
+									echo "<li>" . $li . "</li>";
+								}
+								echo "</ul>";
+
 
                 fclose( $inFile );
 
-	?> 
+	?>
 
 </body>
 </html>
