@@ -15,6 +15,9 @@
                     else if (preg_match("/[Ff][Uu][Ss][Ii][Oo][Nn]/", $inputString)){
                         array_push($listOfTokens, "FUSION");
                     }
+		    else if (preg_match("/[aA][mM]/", $inputString)){
+                        array_push($listOfTokens, "AM");
+                    }
                     else if (preg_match("/[Dd]-?[Ss][Tt][Aa][Rr]/", $inputString)){
                         array_push($listOfTokens, "DSTAR");
                     }
